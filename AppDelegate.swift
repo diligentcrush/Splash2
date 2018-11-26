@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if user != nil {
                 //
-                let controller = storyboard.instantiateViewController(withIdentifier: "MainPageViewController") as! UIPageViewController
+                let controller = storyboard.instantiateViewController(withIdentifier: "MainPagerControl") as! UIViewController
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
             } else  {

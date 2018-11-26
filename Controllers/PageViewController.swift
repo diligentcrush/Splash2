@@ -14,7 +14,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     var pageControl = UIPageControl()
     
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: "sbBlue"),
+        return [self.newVc(viewController: "homeView"),
                 self.newVc(viewController: "sbRed"),
                 self.newVc(viewController: "sbGreen")
         
@@ -40,9 +40,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         self.pageControl.numberOfPages = orderedViewControllers.count
         self.pageControl.currentPage = 0
         self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.black
-        self.pageControl.pageIndicatorTintColor = UIColor.white
-        self.pageControl.currentPageIndicatorTintColor = UIColor.black
+        self.pageControl.tintColor = UIColor.orange
+        self.pageControl.pageIndicatorTintColor = UIColor(red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 1.0)
+        self.pageControl.currentPageIndicatorTintColor = UIColor(red: 255.0/255.0, green: 250.0/255.0, blue: 252.0/255.0, alpha: 1.0)
         self.view.addSubview(pageControl)
         
     }

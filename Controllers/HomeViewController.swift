@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import Foundation
+import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    
+    /** var homeFeed: UITableView!
+    
+    var posts = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-    }
+    } **/
 
 
 }

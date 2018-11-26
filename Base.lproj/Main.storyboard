@@ -24,11 +24,11 @@
         <!--homeView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="homeView" title="homeView" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeView" title="homeView" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="490" y="718"/>
         </scene>
-        <!--View Controller-->
+        <!--MainPagerControl-->
         <scene sceneID="GSi-oM-SDS">
             <objects>
-                <viewController id="vja-bM-v0G" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPagerControl" title="MainPagerControl" id="vja-bM-v0G" customClass="MainPagerController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="50v-Gt-Sdo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,39 +50,61 @@
                                     <segue destination="WCv-VE-rMQ" kind="embed" id="sOK-en-Z1z"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q94-OP-KEp">
-                                <rect key="frame" x="240" y="537" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQr-6T-qlc">
+                                <rect key="frame" x="137" y="571" width="50" height="50"/>
+                                <state key="normal" image="camera off"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-rw-mRK">
-                                <rect key="frame" x="119" y="538" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3h-st-25D">
+                                <rect key="frame" x="228" y="571" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="euI-5J-Sdm"/>
+                                </constraints>
+                                <state key="normal" image="ear off"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ear" translatesAutoresizingMaskIntoConstraints="NO" id="g1G-Ba-fdO">
-                                <rect key="frame" x="139" y="553" width="21" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uia-ae-DPj">
+                                <rect key="frame" x="177" y="631" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="pxf-xH-fmU"/>
+                                </constraints>
+                                <state key="normal" image="create_off"/>
+                                <connections>
+                                    <action selector="createClicked:" destination="vja-bM-v0G" eventType="touchUpInside" id="FnT-XI-yHX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l3h-st-25D" firstAttribute="leading" secondItem="oQr-6T-qlc" secondAttribute="trailing" constant="41" id="2WV-v4-d2H"/>
                             <constraint firstItem="kkn-gw-eBp" firstAttribute="bottom" secondItem="t13-fE-2GL" secondAttribute="bottom" id="AXb-t1-P37"/>
+                            <constraint firstItem="oQr-6T-qlc" firstAttribute="top" secondItem="l3h-st-25D" secondAttribute="top" id="Bad-KY-JjU"/>
+                            <constraint firstItem="oQr-6T-qlc" firstAttribute="bottom" secondItem="l3h-st-25D" secondAttribute="bottom" id="Nug-q2-4Lf"/>
                             <constraint firstItem="kkn-gw-eBp" firstAttribute="trailing" secondItem="t13-fE-2GL" secondAttribute="trailing" id="Qyu-w8-fxD"/>
+                            <constraint firstItem="t13-fE-2GL" firstAttribute="trailing" secondItem="l3h-st-25D" secondAttribute="trailing" constant="136" id="TF9-cw-rw2"/>
                             <constraint firstItem="kkn-gw-eBp" firstAttribute="top" secondItem="50v-Gt-Sdo" secondAttribute="top" id="Vrw-PV-GWL"/>
+                            <constraint firstItem="uia-ae-DPj" firstAttribute="centerX" secondItem="kkn-gw-eBp" secondAttribute="centerX" id="WS1-x9-lay"/>
+                            <constraint firstItem="l3h-st-25D" firstAttribute="top" secondItem="t13-fE-2GL" secondAttribute="top" constant="551" id="ZBT-uj-oUO"/>
+                            <constraint firstItem="uia-ae-DPj" firstAttribute="leading" secondItem="t13-fE-2GL" secondAttribute="leading" constant="177" id="dUt-qU-dQE"/>
+                            <constraint firstItem="oQr-6T-qlc" firstAttribute="leading" secondItem="t13-fE-2GL" secondAttribute="leading" constant="137" id="hUf-Dj-37y"/>
+                            <constraint firstItem="uia-ae-DPj" firstAttribute="top" secondItem="oQr-6T-qlc" secondAttribute="bottom" constant="10" id="kgd-XD-iBn"/>
+                            <constraint firstItem="t13-fE-2GL" firstAttribute="bottom" secondItem="uia-ae-DPj" secondAttribute="bottom" constant="45" id="uVb-KE-51B"/>
                             <constraint firstItem="kkn-gw-eBp" firstAttribute="leading" secondItem="t13-fE-2GL" secondAttribute="leading" id="wnv-pw-uWe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t13-fE-2GL"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="oQr-6T-qlc" id="nnZ-lN-r7L"/>
+                        <outlet property="createButton" destination="uia-ae-DPj" id="pAP-uc-xfp"/>
+                        <outlet property="songButton" destination="l3h-st-25D" id="gKj-KV-4gE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSh-Av-82D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1151" y="725"/>
+            <point key="canvasLocation" x="-1152.1739130434783" y="724.72826086956525"/>
         </scene>
-        <!--MainPageViewController-->
+        <!--Page View Controller-->
         <scene sceneID="qcc-PG-zQN">
             <objects>
-                <pageViewController storyboardIdentifier="MainPageViewController" autoresizesArchivedViewToFullSize="NO" title="MainPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="WCv-VE-rMQ" customClass="PageViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="MainPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="WCv-VE-rMQ" customClass="PageViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="QCh-gW-rgj"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyT-jP-cBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9R-cV-Tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2055.072463768116" y="718.20652173913049"/>
+            <point key="canvasLocation" x="-2049" y="725"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="iEk-dc-DU8">
@@ -396,7 +418,9 @@
     </scenes>
     <resources>
         <image name="backbutton" width="31" height="31"/>
+        <image name="camera off" width="135" height="135"/>
+        <image name="create_off" width="180" height="180"/>
         <image name="disc wave concept saturated" width="514" height="514"/>
-        <image name="ear" width="230" height="330"/>
+        <image name="ear off" width="135" height="135"/>
     </resources>
 </document>
