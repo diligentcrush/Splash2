@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         goButton.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
+       
     }
     
     @IBAction func backButton(_ sender: UIButton) {

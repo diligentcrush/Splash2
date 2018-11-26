@@ -36,6 +36,60 @@
             </objects>
             <point key="canvasLocation" x="490" y="718"/>
         </scene>
+        <!--Photo Editor View Controller-->
+        <scene sceneID="lzo-pR-bfR">
+            <objects>
+                <viewController id="ZRw-Vn-EDA" customClass="PhotoEditorViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Sn-CB-bmu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO5-LV-94T">
+                                <rect key="frame" x="20" y="31" width="59" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="cancel">
+                                    <color key="titleColor" red="0.93725490196078431" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelEdit:" destination="ZRw-Vn-EDA" eventType="touchUpInside" id="H8R-mZ-AOO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ush-zw-0Sq">
+                                <rect key="frame" x="357" y="31" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="post">
+                                    <color key="titleColor" red="0.0" green="0.64313725490196072" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="share your thoughts..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CpS-WC-nA3">
+                                <rect key="frame" x="20" y="481" width="374" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.42686170210000002" green="0.4189733403" blue="0.42246591919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="invert_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="N1M-1X-q6h">
+                                <rect key="frame" x="15" y="73" width="384" height="384"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="1NK-IR-F3J"/>
+                    </view>
+                    <connections>
+                        <outlet property="photo" destination="N1M-1X-q6h" id="Hlu-Ia-xhG"/>
+                        <outlet property="photoCaption" destination="CpS-WC-nA3" id="Zdt-NJ-6hQ"/>
+                        <outlet property="postButtonStyle" destination="Ush-zw-0Sq" id="rGo-De-U5N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9I-dz-SsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1152" y="-42"/>
+        </scene>
         <!--MainPagerControl-->
         <scene sceneID="GSi-oM-SDS">
             <objects>
@@ -53,6 +107,9 @@
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQr-6T-qlc">
                                 <rect key="frame" x="137" y="571" width="50" height="50"/>
                                 <state key="normal" image="camera off"/>
+                                <connections>
+                                    <segue destination="ZRw-Vn-EDA" kind="show" id="ydl-Wd-D1a"/>
+                                </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3h-st-25D">
                                 <rect key="frame" x="228" y="571" width="50" height="50"/>
@@ -422,5 +479,6 @@
         <image name="create_off" width="180" height="180"/>
         <image name="disc wave concept saturated" width="514" height="514"/>
         <image name="ear off" width="135" height="135"/>
+        <image name="invert_placeholder" width="1500" height="1500"/>
     </resources>
 </document>

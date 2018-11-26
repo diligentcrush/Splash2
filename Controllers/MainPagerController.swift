@@ -62,11 +62,5 @@ class MainPagerController: UIViewController {
         
     }
     
-    /** func toggleButton(button: UIButton, onImage: UIImage, offImage: UIImage) {
-        if button.currentImage == offImage {
-            button.setImage(onImage, for: .normal)
-        } else {
-            button.setImage(offImage, for: .normal)
-        }
-    } **/
+    
 }
