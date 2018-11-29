@@ -10,19 +10,22 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var profileImage: UIButton!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
-    @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
-    
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postCard: UIView!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // profileImage.layer.cornerRadius = profileImage.bounds.height / 2
-        // profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = profileImage.bounds.height / 2
+        profileImage.clipsToBounds = true
+        
+        postCard.layer.borderColor = UIColor(red: 255.0/255.0, green: 250.0/255.0, blue: 252.0/255.0, alpha: 1.0).cgColor
+        postCard.layer.borderWidth = 0.5
    
     }
 

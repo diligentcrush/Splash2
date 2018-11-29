@@ -38,6 +38,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
         
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
