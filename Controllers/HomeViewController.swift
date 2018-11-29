@@ -4,7 +4,7 @@
 //
 //  Created by Keshav Pothireddy on 11/24/18.
 //  Copyright © 2018 UWAVES. All rights reserved.
-//
+/**
 
 import UIKit
 import Foundation
@@ -19,8 +19,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView = UITableView(frame: view.bounds, style: .plain)
-        
         let cellNib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "postCell")
         // homeFeed.register(LoadingCell.self, forCellReuseIdentifier: "loadingCell")
@@ -31,12 +29,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         layoutGuide = view.safeAreaLayoutGuide
         
-        tableView.backgroundColor = UIColor(red: 9.0/255.0, green: 9.0/255.0, blue: 9.0/255.0, alpha: 1.0)
+        /** tableView.backgroundColor = UIColor(red: 9.0/255.0, green: 9.0/255.0, blue: 9.0/255.0, alpha: 1.0)
         
-        tableView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: layoutGuide.topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: containerPane.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: containerPane.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: containerPane.bottomAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: containerPane.trailingAnchor).isActive = true **/
+
+        
+       /** tableView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: diveBar.bottomAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true **/
+        
         
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
@@ -60,6 +65,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 }
-
+**/
 
 
