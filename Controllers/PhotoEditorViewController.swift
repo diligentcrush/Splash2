@@ -9,11 +9,36 @@
 import UIKit
 import Firebase
 
-class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelegate, UITextViewDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var photoCaption: UITextView!
-
+    
+    @IBAction func postButton(_ sender: UIButton) {
+        
+        guard let userProfile = UserService.currentUserProfile else {return}
+        
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        
+        let postObject = [
+            "author": [
+                "username": userProfile.username,
+                "uid": userProfile.uid,
+                "photoURL": userProfile.photoURL.absoluteString
+            ],
+            "text": photoCaption.text,
+            "timestamp": [".sv":"timestamp"]
+        ] as [String:Any]
+        
+        postRef.setValue(postObject, withCompletionBlock: {error, ref in
+            if error == nil {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                
+            }
+        })
+    }
+    
     
     var selectedImage: UIImage?
     
