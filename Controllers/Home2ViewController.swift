@@ -13,15 +13,10 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [
-        Post(id: "1", author: "Travis Scott", text: "I'm not motherfuckin ASAP bitch!!"),
-        Post(id: "2", author: "Kanye West", text: "I don't care about black people"),
-        Post(id: "3", author: "Lil Pump", text: "ESKETTITTTTT")
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // tableView = UITableView(frame: view.bounds, style: .plain)
         
         let cellNib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "postCell")
@@ -44,14 +39,19 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-        cell.set(post: posts[indexPath.row])
         return cell 
     }
-
+ 
+    /**
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        return cell
+    }
+ **/
 
 }

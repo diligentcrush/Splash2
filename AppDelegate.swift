@@ -24,15 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             if user != nil {
-                UserService.observeUserProfile(user!.uid) { userProfile in
-                    UserService.currentUserProfile = userProfile
-                }
                 //
                 let controller = storyboard.instantiateViewController(withIdentifier: "MainPagerControl") as! UIViewController
                 self.window?.rootViewController = controller
                 self.window?.makeKeyAndVisible()
             } else  {
-                UserService.currentUserProfile = nil
                 // menu screen
                 let controller = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
                 self.window?.rootViewController = controller

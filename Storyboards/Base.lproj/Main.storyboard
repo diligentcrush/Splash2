@@ -101,9 +101,6 @@
                                 <state key="normal" title="post">
                                     <color key="titleColor" red="0.0" green="0.64313725490196072" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="postButton:" destination="ZRw-Vn-EDA" eventType="touchUpInside" id="et3-qP-aGi"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="share your thoughts..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CpS-WC-nA3">
                                 <rect key="frame" x="20" y="481" width="374" height="50"/>
