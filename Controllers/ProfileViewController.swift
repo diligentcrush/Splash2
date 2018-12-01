@@ -13,6 +13,7 @@ import Firebase
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     var imagePicker:UIImagePickerController!
     
@@ -121,4 +122,17 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
     
     }
+    
+    
+    /** func observeUsername(_ uid: String, completion: @escaping ((_ userProfile:UserProfile?)->())) {
+        let userRef = Database.database().reference().child("users/profile/\(uid)")
+        
+        userRef.observe(.value, with: { snapshot in
+            var userProfile:UserProfile?
+            
+            if let dict = snapshot.value as? [String:Any],
+                let username = dict["username"] as? String,
+            completion(userProfile)
+        })
+    } **/
 }

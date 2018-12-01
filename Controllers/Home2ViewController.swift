@@ -9,25 +9,49 @@
 import UIKit
 import Foundation
 
-class Home2ViewController: UIViewController {
+class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    @IBOutlet weak var diveBar: UIView!
-    @IBOutlet weak var boxbox: UIView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var layoutGuide:UILayoutGuide!
-        layoutGuide = view.safeAreaLayoutGuide
+        // tableView = UITableView(frame: view.bounds, style: .plain)
         
+        let cellNib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "postCell")
+        
+        // view.addSubview(tableView)
 
-        boxbox.backgroundColor = UIColor.blue
         
-        // tableView.leadingAnchor.constraint(equalTo: containerPane.leadingAnchor).isActive = true
-        // tableView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor).isActive = true
         
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
 
     }
     
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        return cell 
+    }
+ 
+    /**
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        return cell
+    }
+ **/
 
 }

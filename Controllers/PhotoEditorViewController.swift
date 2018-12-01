@@ -7,26 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
-class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var postButtonStyle: UIButton!
     @IBOutlet weak var photoCaption: UITextView!
+
     
     var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        postButtonStyle.layer.cornerRadius = 15
-        postButtonStyle.clipsToBounds = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
         photo.addGestureRecognizer(tapGesture)
         photo.isUserInteractionEnabled = true
         
-        photoCaption.delegate = self
 
     }
     

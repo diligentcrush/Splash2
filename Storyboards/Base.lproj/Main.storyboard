@@ -49,26 +49,25 @@
                                     <constraint firstAttribute="bottom" secondItem="IYA-d4-6nU" secondAttribute="bottom" constant="10" id="wzv-eJ-Kwh"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mi-aX-EAY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0hB-3Z-1z0">
                                 <rect key="frame" x="0.0" y="70" width="414" height="666"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <color key="backgroundColor" red="0.0" green="0.61176470589999998" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0hB-3Z-1z0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="1m7-Xs-BJZ"/>
                             <constraint firstItem="BUi-2j-8uX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Ju-8Q-WVc"/>
-                            <constraint firstItem="8mi-aX-EAY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6Xa-d5-POr"/>
-                            <constraint firstItem="8mi-aX-EAY" firstAttribute="top" secondItem="BUi-2j-8uX" secondAttribute="bottom" id="KsN-Ha-zcM"/>
-                            <constraint firstItem="8mi-aX-EAY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nkr-j1-Y28"/>
+                            <constraint firstItem="0hB-3Z-1z0" firstAttribute="top" secondItem="BUi-2j-8uX" secondAttribute="bottom" id="J4j-21-gYJ"/>
+                            <constraint firstItem="0hB-3Z-1z0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ToO-St-cD3"/>
                             <constraint firstItem="BUi-2j-8uX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a4Y-6C-T5o"/>
-                            <constraint firstItem="8mi-aX-EAY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cC1-mt-9fE"/>
+                            <constraint firstItem="0hB-3Z-1z0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aXO-ow-69V"/>
                             <constraint firstItem="BUi-2j-8uX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y4H-vc-q3G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="boxbox" destination="8mi-aX-EAY" id="W2Y-Uq-a7O"/>
-                        <outlet property="diveBar" destination="BUi-2j-8uX" id="DDZ-1c-3LH"/>
+                        <outlet property="tableView" destination="0hB-3Z-1z0" id="YJ2-IJ-c36"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -122,7 +121,6 @@
                     <connections>
                         <outlet property="photo" destination="N1M-1X-q6h" id="Hlu-Ia-xhG"/>
                         <outlet property="photoCaption" destination="CpS-WC-nA3" id="Zdt-NJ-6hQ"/>
-                        <outlet property="postButtonStyle" destination="Ush-zw-0Sq" id="rGo-De-U5N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9I-dz-SsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,6 +306,7 @@
                     </view>
                     <connections>
                         <outlet property="profileImage" destination="tTO-C5-Q8s" id="EiF-WC-HY8"/>
+                        <outlet property="usernameLabel" destination="dlu-4Q-mZi" id="d2f-GD-wih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsS-Cw-oLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
