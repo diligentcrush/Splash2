@@ -47,11 +47,5 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell 
     }
  
-    /**
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-        return cell
-    }
- **/
 
 }

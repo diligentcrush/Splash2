@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usernameLabel.text = Auth.auth().currentUser?.displayName
+        
         profileImage.layer.cornerRadius = profileImage.bounds.height / 2
         profileImage.clipsToBounds = true
         
@@ -111,9 +113,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func saveProfile(profileImageURL:URL, completion: @escaping ((_
         success: Bool)->())) {
         guard let uid = Auth.auth().currentUser?.uid else {return}
-        let databaseRef = Database.database().reference().child("users/profile/\(uid)/profileImage")
+        guard let myuser = Auth.auth().currentUser?.displayName else {return}
+        
+        let databaseRef = Database.database().reference().child("users/profile/\(uid)")
         
         let userObject = [
+            "username": myuser,
             "photoURL": profileImageURL.absoluteString
             ] as [String:Any]
         
@@ -123,16 +128,4 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     }
     
-    
-    /** func observeUsername(_ uid: String, completion: @escaping ((_ userProfile:UserProfile?)->())) {
-        let userRef = Database.database().reference().child("users/profile/\(uid)")
-        
-        userRef.observe(.value, with: { snapshot in
-            var userProfile:UserProfile?
-            
-            if let dict = snapshot.value as? [String:Any],
-                let username = dict["username"] as? String,
-            completion(userProfile)
-        })
-    } **/
 }
