@@ -13,11 +13,13 @@ class Post {
     var author:String
     var text:String
     var timestamp: Double
+    var imageURL: String
     
-    init(id:String, author:String, text:String, timestamp: Double) {
+    init(id:String, author:String, text:String, timestamp: Double, imageURL: String) {
         self.id = id
         self.author = author
         self.text = text
         self.timestamp = timestamp
+        self.imageURL = imageURL
     }
 }
