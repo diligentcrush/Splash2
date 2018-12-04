@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 
-class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var photoCaption: UITextView!
     
     var imageDbUrl: String?
+    var currentText: String!
     
     @IBAction func postButton(_ sender: UIButton) {
         
@@ -50,12 +51,40 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
         photo.addGestureRecognizer(tapGesture)
         photo.isUserInteractionEnabled = true
+        
+        photoCaption.delegate = self
+    
+        photoCaption.becomeFirstResponder()
+        
+    
+        photoCaption.selectedTextRange = photoCaption.textRange(from: photoCaption.beginningOfDocument, to: photoCaption.endOfDocument)
+        
 
+    }
+    
+    
+    func textView(_ photoCaption: UITextView, shouldChangeTextIn range:NSRange, replacementText text:String) -> Bool {
+        let currentText:String = photoCaption.text
+        let updatedText = (currentText as NSString).replacingCharacters(in: range, with: text)
+        
+        if updatedText.isEmpty {
+            photoCaption.text = "share your thoughts"
+            photoCaption.textColor = UIColor.lightGray
+            
+            photoCaption.selectedTextRange = photoCaption.textRange(from: photoCaption.beginningOfDocument, to: photoCaption.beginningOfDocument)
+        } else if photoCaption.textColor == UIColor.lightGray && !text.isEmpty {
+            photoCaption.textColor = UIColor.white
+            photoCaption.text = text
+        } else {
+            return true
+        }
+        return true
     }
     
     @IBAction func cancelEdit(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+
     
     @objc func handleSelectPhoto() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
@@ -104,4 +133,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
+   
+    
+
 }

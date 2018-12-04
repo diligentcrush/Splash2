@@ -10,12 +10,12 @@ import Foundation
 
 class Post {
     var id:String
-    var author:String
+    var author:UserProfile
     var text:String
     var timestamp: Double
     var imageURL: String
     
-    init(id:String, author:String, text:String, timestamp: Double, imageURL: String) {
+    init(id:String, author:UserProfile, text:String, timestamp: Double, imageURL: String) {
         self.id = id
         self.author = author
         self.text = text

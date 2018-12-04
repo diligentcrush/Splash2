@@ -9,6 +9,9 @@
 import UIKit
 import SideMenu
 import Firebase
+import FirebaseUI
+import SDWebImage
+import Kingfisher
 
 class ProfileViewController: UIViewController {
 
@@ -34,6 +37,9 @@ class ProfileViewController: UIViewController {
         imagePicker.delegate = self
         
         setupSideMenu()
+        getProfileImage()
+        
+        
 
     }
     
@@ -48,6 +54,28 @@ class ProfileViewController: UIViewController {
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.view, forMenu: .right)
     
     }
+    
+    func getProfileImage(){
+        
+       // var imageUrl: String
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        let imageRef = Storage.storage().reference().child("user/\(uid)/profile-photo")
+        
+        imageRef.downloadURL(completion: {(url, error) in
+            if (error == nil) {
+                if let downloadUrl = url {
+                    let downloadString = downloadUrl.absoluteString
+                    self.profileImage.sd_setImage(with: URL(string: downloadString))
+                }
+            } else {
+                print("error again shit")
+            }
+        })
+        
+        
+    }
+    
 
 }
 
@@ -58,13 +86,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            self.profileImage.image = pickedImage
-        }
+        let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
         
-        // Upload image to Firebase
-        
-        guard let image = profileImage.image else {return}
         
         self.uploadProfileImage(image) { url in
             
@@ -81,6 +104,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                             success in
                             if success {
                                 picker.dismiss(animated:true, completion: nil)
+                                
+                                self.getProfileImage()
                             }
                         }
                     }
@@ -92,7 +117,8 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        // let randImageName = UUID().uuidString
+        let storageRef = Storage.storage().reference().child("user/\(uid)/profile-photo")
         
         guard let imageData = image.jpegData(compressionQuality: 1) else { return }
         
