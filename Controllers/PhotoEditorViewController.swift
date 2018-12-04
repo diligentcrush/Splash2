@@ -14,15 +14,15 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var photoCaption: UITextView!
     
-    var imageDbUrl: String?
+    var imageURL: String?
     var currentText: String!
     
     @IBAction func postButton(_ sender: UIButton) {
         
         guard let userProfile = UserService.currentUserProfile else { return }
         
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let postRef = Database.database().reference().child("posts/\(uid)").childByAutoId()
+        // guard let uid = Auth.auth().currentUser?.uid else { return }
+        let postRef = Database.database().reference().child("posts").childByAutoId()
         
         let postObject = [
            "author": [
@@ -32,7 +32,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
             ], 
             "text": photoCaption.text,
             "timestamp": [".sv":"timestamp"],
-            "imageURL": imageDbUrl as! String
+            "imageURL": imageURL as! String
             ] as [String:Any]
         
         postRef.setValue(postObject, withCompletionBlock: { error, ref in
@@ -58,6 +58,8 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         
     
         photoCaption.selectedTextRange = photoCaption.textRange(from: photoCaption.beginningOfDocument, to: photoCaption.endOfDocument)
+        
+        photoCaption.delegate = self
         
 
     }
@@ -121,7 +123,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
                     if error != nil {
                         print("error with database reference")
                     } else {
-                        self.imageDbUrl = url?.absoluteString
+                        self.imageURL = url?.absoluteString
                         
                     }
                 })

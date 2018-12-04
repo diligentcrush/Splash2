@@ -37,4 +37,12 @@ class PostTableViewCell: UITableViewCell {
 
     }
     
+    func set(post:Post) {
+        
+        //. self.post = post 
+        
+        usernameLabel.text = post.author.username
+        captionLabel.text = post.text
+    }
+    
 }

@@ -67,7 +67,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="0hB-3Z-1z0" id="YJ2-IJ-c36"/>
+                        <outlet property="tableView" destination="0hB-3Z-1z0" id="xeE-mE-PgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

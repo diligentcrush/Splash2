@@ -8,10 +8,13 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
+    
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +25,13 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.register(cellNib, forCellReuseIdentifier: "postCell")
         
         // view.addSubview(tableView)
-
         
         
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+       
+        
+        observePosts()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -34,18 +40,54 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
+    func observePosts() {
+        let postRef = Database.database().reference().child("posts")
+        
+        postRef.observe(.value, with: {snapshot in
+            
+            var tempPosts = [Post]()
+            
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                    let dict = childSnapshot.value as? [String:Any],
+                    let author = dict["author"] as? [String:Any],
+                    let uid = author["uid"] as? String,
+                    let username = author["username"] as? String,
+                    let photoURL = author["photoURL"] as? String,
+                    let url = URL(string: photoURL),
+                    let imageURL = dict["imageURL"] as? String,
+                    let text = dict["text"] as? String,
+                    let timestamp = dict["timestamp"] as? Double {
+                    
+                    let userProfile = UserProfile(uid: uid, username: username, photoURL: url)
+                    let post = Post(id: childSnapshot.key, author: userProfile, text: text, timestamp: timestamp, imageURL: imageURL)
+                    
+                    tempPosts.append(post)
+    
+                    
+                    }
+            }
+            
+            self.posts = tempPosts
+            self.tableView.reloadData()
+        })
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-        return cell 
+        cell.set(post: posts[indexPath.row])
+        return cell
     }
+    
+
  
 
 }
