@@ -17,6 +17,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postCard: UIView!
     
+    var pictureLink: String!
+    var profileLink: URL!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,10 +41,13 @@ class PostTableViewCell: UITableViewCell {
     
     func set(post:Post) {
         
-        //. self.post = post 
-        
         usernameLabel.text = post.author.username
         captionLabel.text = post.text
+        self.pictureLink = post.imageURL
+        self.postImage.sd_setImage(with: URL(string: pictureLink))
+        self.profileLink = post.author.photoURL
+        self.profileImage.sd_setImage(with: profileLink)
+        timestampLabel.text = post.createdAt.calenderTimeSinceNow()
     }
     
 }
