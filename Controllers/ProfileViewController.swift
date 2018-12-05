@@ -13,12 +13,36 @@ import FirebaseUI
 import SDWebImage
 import Kingfisher
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var imagePicker:UIImagePickerController!
+    
+    let yeet: [UIImage] = [
+        
+    UIImage(named: "default-placeholder")!,
+    UIImage(named: "invert_placeholder")!,
+    
+    UIImage(named: "invert_placeholder")!,
+    UIImage(named: "default-placeholder")!,
+    
+    UIImage(named: "default-placeholder")!,
+    UIImage(named: "invert_placeholder")!,
+    
+    UIImage(named: "default-placeholder")!,
+    UIImage(named: "invert_placeholder")!,
+    
+    UIImage(named: "invert_placeholder")!,
+    UIImage(named: "default-placeholder")!,
+    
+    UIImage(named: "default-placeholder")!,
+    UIImage(named: "invert_placeholder")!,
+
+    ]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +63,29 @@ class ProfileViewController: UIViewController {
         setupSideMenu()
         getProfileImage()
         
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
+        var layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.sectionInset = UIEdgeInsets(top: 0,left: 5,bottom: 0,right: 5)
+        layout.minimumInteritemSpacing = 5
+        layout.itemSize = CGSize(width: (self.collectionView.frame.size.width - 20)/2, height: self.collectionView.frame.size.height/3)
+        
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section:Int) -> Int {
+        return yeet.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! profileCell
+        cell.collectPic.image = yeet[indexPath.item]
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 0.5
 
+        return cell
     }
     
     @objc func openImagePicker(_ sender:Any) {
@@ -155,3 +200,5 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
 }
+
+// ------------------------------------ ALBUM ------------------------------------------

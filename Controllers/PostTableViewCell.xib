@@ -46,13 +46,13 @@
                                 <color key="textColor" red="1" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-O3-RFD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="364" placeholderIntrinsicHeight="22" text="caption" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-O3-RFD">
                                 <rect key="frame" x="10" y="424" width="364" height="22"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="invert_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="17K-xC-lbF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="invert_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="17K-xC-lbF">
                                 <rect key="frame" x="10" y="50" width="364" height="364"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="17K-xC-lbF" secondAttribute="height" multiplier="1:1" id="T9Z-cv-dcF"/>

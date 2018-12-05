@@ -16,6 +16,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     
     var imageURL: String?
     var currentText: String!
+    var pickedImage = UIImage()
     
     @IBAction func postButton(_ sender: UIButton) {
         
@@ -32,7 +33,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
             ], 
             "text": photoCaption.text,
             "timestamp": [".sv":"timestamp"],
-            "imageURL": imageURL as! String
+            "imageURL": imageURL as! String!
             ] as [String:Any]
         
         postRef.setValue(postObject, withCompletionBlock: { error, ref in
@@ -43,6 +44,34 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
             }
         })
         
+        let photoID = UUID().uuidString
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = Storage.storage().reference().child("posts/\(uid)/\(photoID)")
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        guard let imageData = pickedImage.jpegData(compressionQuality: 1) else {return}
+        
+        let uploadTask = storageRef.putData(imageData, metadata: metaData) { (metadata, error) in
+            print("UPLOAD TASK FINISHED")
+            print(metadata ?? "NO METADATA")
+            print(error ?? "NO ERROR")
+            
+            storageRef.downloadURL(completion: {(url, error) in
+                if error != nil {
+                    print("error with database reference")
+                } else {
+                    self.imageURL = url?.absoluteString
+                    
+                }
+            })
+        }
+        
+        uploadTask.resume()
+        
+        
     }
     
     override func viewDidLoad() {
@@ -52,18 +81,44 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         photo.addGestureRecognizer(tapGesture)
         photo.isUserInteractionEnabled = true
         
-        photoCaption.delegate = self
-    
-        photoCaption.becomeFirstResponder()
+        let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(keyboardTap)
+        view.isUserInteractionEnabled = true
         
-    
+        // photoCaption.becomeFirstResponder()
         photoCaption.selectedTextRange = photoCaption.textRange(from: photoCaption.beginningOfDocument, to: photoCaption.endOfDocument)
-        
         photoCaption.delegate = self
+        
+        photo.clipsToBounds = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
 
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object:nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object:nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object:nil)
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        print("Keyboard will show: \(notification.name.rawValue)")
+        view.frame.origin.y = -150
+    }
+    
+   
+    @objc func dismissKeyboard (_sender: UITapGestureRecognizer) {
+        photoCaption.resignFirstResponder()
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = 0
+        }
+    
+    }
     
     func textView(_ photoCaption: UITextView, shouldChangeTextIn range:NSRange, replacementText text:String) -> Bool {
         let currentText:String = photoCaption.text
@@ -102,40 +157,15 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         picker.dismiss(animated: true, completion: nil)
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+           
             photo.image = image
+            pickedImage = image
             
-            let photoID = UUID().uuidString
-            
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            let storageRef = Storage.storage().reference().child("posts/\(uid)/\(photoID)")
-            
-            let metaData = StorageMetadata()
-            metaData.contentType = "image/jpg"
-            
-            guard let imageData = image.jpegData(compressionQuality: 1) else {return}
-            
-            let uploadTask = storageRef.putData(imageData, metadata: metaData) { (metadata, error) in
-                print("UPLOAD TASK FINISHED")
-                print(metadata ?? "NO METADATA")
-                print(error ?? "NO ERROR")
-                
-                storageRef.downloadURL(completion: {(url, error) in
-                    if error != nil {
-                        print("error with database reference")
-                    } else {
-                        self.imageURL = url?.absoluteString
-                        
-                    }
-                })
-            }
-            
-            uploadTask.resume()
-            
-        }
         
     }
     
    
     
 
+}
 }

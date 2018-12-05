@@ -19,7 +19,37 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         goButton.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
+        
+        let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(keyboardTap)
+        view.isUserInteractionEnabled = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object:nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object:nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object:nil)
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        view.frame.origin.y = -150
+    }
+    
+    
+    @objc func dismissKeyboard (_sender: UITapGestureRecognizer) {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = 0
+        }
+        
     }
     
     @IBAction func backButton(_ sender: UIButton) {

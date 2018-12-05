@@ -26,24 +26,23 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         // view.addSubview(tableView)
         
-        
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-       
-        
-        observePosts()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.reloadData()
+        viewDidAppear()
 
     }
     
+    func viewDidAppear() {
+        observePosts()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+    }
     
     func observePosts() {
         let postRef = Database.database().reference().child("posts")
         
-        postRef.observe(.value, with: {snapshot in
+        postRef.observe(.value , with: {snapshot in
             
             var tempPosts = [Post]()
             
@@ -73,6 +72,26 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         })
     }
     
+    /** func updateProfiles() {
+        
+        let postRef = Database.database().reference().child("posts")
+        postRef.observe(.childChanged, with: {snapshot in
+            
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                let dict = childSnapshot.value as? [String:Any],
+                let author = dict["author"] as? [String:Any],
+                    let photoURL = author["photoURL"] as? String,
+                    let uid = author["uid"] as? String,
+                    let url = URL(string: photoURL),
+                    let username = author["username"] as? String {
+                   
+                    let userProfile = UserProfile(uid: uid, username: username, photoURL: url)
+                }
+            }
+        })
+    } **/
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -86,8 +105,5 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.set(post: posts[indexPath.row])
         return cell
     }
-    
-
- 
 
 }

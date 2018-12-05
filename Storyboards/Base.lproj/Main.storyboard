@@ -74,62 +74,6 @@
             </objects>
             <point key="canvasLocation" x="1397.1014492753625" y="717.39130434782612"/>
         </scene>
-        <!--Photo Editor View Controller-->
-        <scene sceneID="lzo-pR-bfR">
-            <objects>
-                <viewController id="ZRw-Vn-EDA" customClass="PhotoEditorViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5Sn-CB-bmu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO5-LV-94T">
-                                <rect key="frame" x="20" y="31" width="59" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
-                                <state key="normal" title="cancel">
-                                    <color key="titleColor" red="0.93725490196078431" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelEdit:" destination="ZRw-Vn-EDA" eventType="touchUpInside" id="H8R-mZ-AOO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ush-zw-0Sq">
-                                <rect key="frame" x="357" y="31" width="42" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
-                                <state key="normal" title="post">
-                                    <color key="titleColor" red="0.0" green="0.64313725490196072" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="postButton:" destination="ZRw-Vn-EDA" eventType="touchUpInside" id="z2B-IK-Dn4"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="share your thoughts" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CpS-WC-nA3">
-                                <rect key="frame" x="20" y="481" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" red="0.42686170210000002" green="0.4189733403" blue="0.42246591919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="invert_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="N1M-1X-q6h">
-                                <rect key="frame" x="15" y="73" width="384" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="1NK-IR-F3J"/>
-                    </view>
-                    <connections>
-                        <outlet property="photo" destination="N1M-1X-q6h" id="Hlu-Ia-xhG"/>
-                        <outlet property="photoCaption" destination="CpS-WC-nA3" id="Zdt-NJ-6hQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9I-dz-SsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1152" y="-42"/>
-        </scene>
         <!--MainPagerControl-->
         <scene sceneID="GSi-oM-SDS">
             <objects>
@@ -148,7 +92,7 @@
                                 <rect key="frame" x="137" y="571" width="50" height="50"/>
                                 <state key="normal" image="camera off"/>
                                 <connections>
-                                    <segue destination="ZRw-Vn-EDA" kind="show" id="ydl-Wd-D1a"/>
+                                    <segue destination="gQl-3l-qeZ" kind="show" id="iNo-cQ-0IR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3h-st-25D">
@@ -249,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTO-C5-Q8s">
-                                <rect key="frame" x="165" y="80" width="85" height="85"/>
+                                <rect key="frame" x="165" y="80" width="84" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tTO-C5-Q8s" secondAttribute="height" multiplier="1:1" id="sij-gv-5Rm"/>
                                 </constraints>
@@ -288,26 +232,66 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlu-4Q-mZi">
-                                <rect key="frame" x="166" y="175" width="82" height="23"/>
+                                <rect key="frame" x="166" y="174" width="82" height="22.666666666666657"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uii-6o-oaJ">
+                                <rect key="frame" x="15" y="236.66666666666666" width="384" height="499.33333333333337"/>
+                                <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xd7-Qu-7aW">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1H8-em-uqJ" customClass="profileCell" customModule="Splash2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ZG-Dd-mGc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1ZG-Dd-mGc" secondAttribute="height" multiplier="1:1" id="01e-PV-ieO"/>
+                                            <constraint firstAttribute="bottom" secondItem="1ZG-Dd-mGc" secondAttribute="bottom" id="3fc-LV-q1C"/>
+                                            <constraint firstAttribute="trailing" secondItem="1ZG-Dd-mGc" secondAttribute="trailing" id="TfL-O8-2Fo"/>
+                                            <constraint firstItem="1ZG-Dd-mGc" firstAttribute="top" secondItem="1H8-em-uqJ" secondAttribute="top" id="VbH-Y5-p3n"/>
+                                            <constraint firstItem="1ZG-Dd-mGc" firstAttribute="leading" secondItem="1H8-em-uqJ" secondAttribute="leading" id="XJf-B5-U3v"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="collectPic" destination="1ZG-Dd-mGc" id="s0h-3z-TsC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="V40-6g-dNQ" firstAttribute="trailing" secondItem="tTO-C5-Q8s" secondAttribute="trailing" constant="164" id="7tZ-uJ-42U"/>
                             <constraint firstItem="Z2Q-wg-o9V" firstAttribute="leading" secondItem="V40-6g-dNQ" secondAttribute="leading" id="7xO-M0-g63"/>
                             <constraint firstItem="dlu-4Q-mZi" firstAttribute="top" secondItem="tTO-C5-Q8s" secondAttribute="bottom" constant="10" id="9qJ-0V-Isk"/>
                             <constraint firstItem="V40-6g-dNQ" firstAttribute="trailing" secondItem="Z2Q-wg-o9V" secondAttribute="trailing" id="CE3-yg-7VW"/>
                             <constraint firstItem="V40-6g-dNQ" firstAttribute="top" secondItem="Z2Q-wg-o9V" secondAttribute="top" constant="20" id="CwY-DU-aXX"/>
+                            <constraint firstItem="tTO-C5-Q8s" firstAttribute="centerX" secondItem="bRN-Dw-5z5" secondAttribute="centerX" id="ENk-Sj-IW0"/>
+                            <constraint firstItem="uii-6o-oaJ" firstAttribute="top" secondItem="dlu-4Q-mZi" secondAttribute="bottom" constant="40" id="WFc-hG-xgw"/>
+                            <constraint firstItem="QJB-a3-HeG" firstAttribute="top" secondItem="uii-6o-oaJ" secondAttribute="bottom" id="X4c-Bg-qk6"/>
                             <constraint firstItem="tTO-C5-Q8s" firstAttribute="leading" secondItem="V40-6g-dNQ" secondAttribute="leading" constant="165" id="aDe-CM-lYm"/>
+                            <constraint firstItem="uii-6o-oaJ" firstAttribute="leading" secondItem="V40-6g-dNQ" secondAttribute="leading" constant="15" id="apf-OS-dH4"/>
                             <constraint firstItem="dlu-4Q-mZi" firstAttribute="centerX" secondItem="bRN-Dw-5z5" secondAttribute="centerX" id="gNl-6V-Rq6"/>
+                            <constraint firstItem="V40-6g-dNQ" firstAttribute="trailing" secondItem="uii-6o-oaJ" secondAttribute="trailing" constant="15" id="vAn-ca-mQH"/>
                             <constraint firstItem="tTO-C5-Q8s" firstAttribute="top" secondItem="Z2Q-wg-o9V" secondAttribute="bottom" constant="10" id="yKM-J1-X1W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V40-6g-dNQ"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="uii-6o-oaJ" id="jfX-Ap-iqO"/>
                         <outlet property="profileImage" destination="tTO-C5-Q8s" id="EiF-WC-HY8"/>
                         <outlet property="usernameLabel" destination="dlu-4Q-mZi" id="d2f-GD-wih"/>
                     </connections>
@@ -503,30 +487,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpL-hT-tgb">
-                                <rect key="frame" x="20" y="30" width="31" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="YpL-hT-tgb" secondAttribute="height" multiplier="1:1" id="dk8-dV-3A3"/>
-                                </constraints>
-                                <state key="normal" image="backbutton"/>
-                                <connections>
-                                    <action selector="backButton:" destination="72z-vv-VbN" eventType="touchUpInside" id="ZTI-cN-7te"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHX-Dq-cgw">
-                                <rect key="frame" x="224" y="20" width="170" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHX-Dq-cgw">
+                                <rect key="frame" x="0.0" y="666" width="414" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iHX-Dq-cgw" secondAttribute="height" multiplier="414:71" constant="5.8309859154929313" id="THp-i3-im4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="23"/>
                                 <state key="normal" title="splash">
                                     <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODy-F8-BWf">
+                                <rect key="frame" x="20" y="30" width="45" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="72z-vv-VbN" eventType="touchUpInside" id="lYv-eZ-klE"/>
+                                    <action selector="cancelEdit:" destination="gQl-3l-qeZ" eventType="touchUpInside" id="hQz-s2-N1K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YpL-hT-tgb" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="5bx-39-Oho"/>
-                            <constraint firstItem="YpL-hT-tgb" firstAttribute="top" secondItem="DSr-5M-44w" secondAttribute="top" constant="10" id="xUd-lA-TIA"/>
+                            <constraint firstItem="iHX-Dq-cgw" firstAttribute="bottom" secondItem="DSr-5M-44w" secondAttribute="bottom" id="F5b-VU-DWu"/>
+                            <constraint firstItem="iHX-Dq-cgw" firstAttribute="trailing" secondItem="DSr-5M-44w" secondAttribute="trailing" id="WiI-az-ZnH"/>
+                            <constraint firstItem="iHX-Dq-cgw" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" id="n76-6E-6Z8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DSr-5M-44w"/>
                     </view>
@@ -553,14 +542,6 @@
                                 <rect key="frame" x="132" y="59" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLn-IB-Eva">
-                                <rect key="frame" x="20" y="30" width="31" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="backbutton"/>
-                                <connections>
-                                    <action selector="backButton:" destination="cjG-g9-PVb" eventType="touchUpInside" id="WH4-fk-s4h"/>
-                                </connections>
-                            </button>
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8IR-bd-dQ8">
                                 <rect key="frame" x="20" y="336" width="374" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -601,17 +582,36 @@
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgU-hk-bLe">
-                                <rect key="frame" x="243" y="20" width="162" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgU-hk-bLe">
+                                <rect key="frame" x="0.0" y="666" width="414" height="70"/>
                                 <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hgU-hk-bLe" secondAttribute="height" multiplier="207:35" id="5sg-sE-TuR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="23"/>
                                 <state key="normal" title="splash">
                                     <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0x-Oo-PiR">
+                                <rect key="frame" x="20" y="30" width="45" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="cjG-g9-PVb" eventType="touchUpInside" id="UaD-YU-peF"/>
+                                    <action selector="cancelEdit:" destination="gQl-3l-qeZ" eventType="touchUpInside" id="NSS-BG-LLo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hgU-hk-bLe" firstAttribute="bottom" secondItem="DIy-qS-tGL" secondAttribute="bottom" id="Ugg-uf-HdF"/>
+                            <constraint firstItem="hgU-hk-bLe" firstAttribute="leading" secondItem="DIy-qS-tGL" secondAttribute="leading" id="VXT-XW-jGL"/>
+                            <constraint firstItem="hgU-hk-bLe" firstAttribute="trailing" secondItem="DIy-qS-tGL" secondAttribute="trailing" id="zF3-GH-oGQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DIy-qS-tGL"/>
                     </view>
                     <connections>
@@ -641,9 +641,76 @@
             </objects>
             <point key="canvasLocation" x="-291.304347826087" y="717.39130434782612"/>
         </scene>
+        <!--Photo Editor View Controller-->
+        <scene sceneID="woc-zh-A73">
+            <objects>
+                <viewController id="gQl-3l-qeZ" customClass="PhotoEditorViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ii6-Kt-QCi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xor-hW-5EF">
+                                <rect key="frame" x="20" y="31" width="59" height="38"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="cancel">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelEdit:" destination="gQl-3l-qeZ" eventType="touchUpInside" id="B7a-Cp-Itm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZy-VV-T1f">
+                                <rect key="frame" x="352" y="31" width="42" height="38"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="post">
+                                    <color key="titleColor" red="0.0" green="0.64313725489999995" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postButton:" destination="gQl-3l-qeZ" eventType="touchUpInside" id="JyO-2z-Dso"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="~" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xMi-ks-k1o">
+                                <rect key="frame" x="20" y="481" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.42686170210000002" green="0.4189733403" blue="0.42246591919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invert_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-fQ-Ql5">
+                                <rect key="frame" x="15" y="74" width="384" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4rs-fQ-Ql5" secondAttribute="height" multiplier="1:1" id="f9p-dB-mRn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4rs-fQ-Ql5" firstAttribute="leading" secondItem="jhJ-uB-TLm" secondAttribute="leading" constant="15" id="Cyz-PO-eGl"/>
+                            <constraint firstItem="xor-hW-5EF" firstAttribute="centerY" secondItem="iZy-VV-T1f" secondAttribute="centerY" id="EKS-wc-Hx4"/>
+                            <constraint firstItem="jhJ-uB-TLm" firstAttribute="trailing" secondItem="4rs-fQ-Ql5" secondAttribute="trailing" constant="15" id="Gf3-n4-QMz"/>
+                            <constraint firstItem="xor-hW-5EF" firstAttribute="leading" secondItem="jhJ-uB-TLm" secondAttribute="leading" constant="20" id="JXw-c6-bNk"/>
+                            <constraint firstItem="xor-hW-5EF" firstAttribute="top" secondItem="jhJ-uB-TLm" secondAttribute="top" constant="11" id="Lyv-cv-KqJ"/>
+                            <constraint firstItem="4rs-fQ-Ql5" firstAttribute="top" secondItem="xor-hW-5EF" secondAttribute="bottom" constant="5" id="MSt-g6-Nq9"/>
+                            <constraint firstItem="xMi-ks-k1o" firstAttribute="leading" secondItem="jhJ-uB-TLm" secondAttribute="leading" constant="20" id="XU0-op-izP"/>
+                            <constraint firstItem="xMi-ks-k1o" firstAttribute="top" secondItem="4rs-fQ-Ql5" secondAttribute="bottom" constant="23" id="YQ2-bY-Cgx"/>
+                            <constraint firstItem="jhJ-uB-TLm" firstAttribute="trailing" secondItem="xMi-ks-k1o" secondAttribute="trailing" constant="20" id="eRN-PA-XkD"/>
+                            <constraint firstItem="jhJ-uB-TLm" firstAttribute="trailing" secondItem="iZy-VV-T1f" secondAttribute="trailing" constant="20" id="en7-25-I1f"/>
+                            <constraint firstItem="jhJ-uB-TLm" firstAttribute="bottom" secondItem="xMi-ks-k1o" secondAttribute="bottom" constant="205" id="vQA-Ke-Qi0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jhJ-uB-TLm"/>
+                    </view>
+                    <connections>
+                        <outlet property="photo" destination="4rs-fQ-Ql5" id="NIW-72-oD0"/>
+                        <outlet property="photoCaption" destination="xMi-ks-k1o" id="c3c-gL-TeH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8md-yT-hLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-504" y="-42"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="backbutton" width="31" height="31"/>
         <image name="camera off" width="135" height="135"/>
         <image name="create_off" width="180" height="180"/>
         <image name="disc wave concept saturated" width="514" height="514"/>
