@@ -26,8 +26,8 @@ class PostTableViewCell: UITableViewCell {
         profileImage.layer.cornerRadius = profileImage.bounds.height / 2
         profileImage.clipsToBounds = true
         
-        postCard.layer.borderColor = UIColor(red: 255.0/255.0, green: 250.0/255.0, blue: 252.0/255.0, alpha: 0.8).cgColor
-        postCard.layer.borderWidth = 0.4
+        // postCard.layer.borderColor = UIColor(red: 255.0/255.0, green: 250.0/255.0, blue: 252.0/255.0, alpha: 0.8).cgColor
+        // postCard.layer.borderWidth = 0.4
         postCard.layer.cornerRadius = 15
         postCard.clipsToBounds = true
         

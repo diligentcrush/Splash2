@@ -101,6 +101,9 @@
                                     <constraint firstAttribute="width" constant="50" id="euI-5J-Sdm"/>
                                 </constraints>
                                 <state key="normal" image="ear off"/>
+                                <connections>
+                                    <segue destination="tp2-jD-2ox" kind="show" id="gHr-SP-HjH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uia-ae-DPj">
                                 <rect key="frame" x="177" y="631" width="60" height="60"/>
@@ -371,7 +374,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xW-W1-1sh">
                                 <rect key="frame" x="0.0" y="586" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.26666666666666666" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.58431372549019611" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="23"/>
                                 <state key="normal" title="login">
                                     <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -489,7 +492,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHX-Dq-cgw">
                                 <rect key="frame" x="0.0" y="666" width="414" height="70"/>
-                                <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.58431372549019611" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iHX-Dq-cgw" secondAttribute="height" multiplier="414:71" constant="5.8309859154929313" id="THp-i3-im4"/>
                                 </constraints>
@@ -584,7 +587,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgU-hk-bLe">
                                 <rect key="frame" x="0.0" y="666" width="414" height="70"/>
-                                <color key="backgroundColor" red="0.0" green="0.2666666667" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.58431372549019611" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hgU-hk-bLe" secondAttribute="height" multiplier="207:35" id="5sg-sE-TuR"/>
                                 </constraints>
@@ -623,6 +626,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsX-ct-WGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1665.217391304348" y="1559.5108695652175"/>
+        </scene>
+        <!--Song Editor View Controller-->
+        <scene sceneID="AT5-z9-qmG">
+            <objects>
+                <viewController id="tp2-jD-2ox" customClass="SongEditorViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KvE-c4-VFD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAQ-ue-lLp">
+                                <rect key="frame" x="20" y="30" width="59" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="cancel">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissBtn:" destination="tp2-jD-2ox" eventType="touchUpInside" id="d0e-XF-iW7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx2-KB-nyE">
+                                <rect key="frame" x="351" y="30" width="42" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="post">
+                                    <color key="titleColor" red="0.0" green="0.64313725489999995" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postBtn:" destination="tp2-jD-2ox" eventType="touchUpInside" id="YjU-lB-54m"/>
+                                    <action selector="postButton:" destination="gQl-3l-qeZ" eventType="touchUpInside" id="fly-tI-oQu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-Un-61I">
+                                <rect key="frame" x="20" y="221" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.42686170210000002" green="0.4189733403" blue="0.42246591919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="UR3-s7-vjj"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionField" destination="hfg-Un-61I" id="2E7-vy-KYe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rO9-iP-xBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-588.40579710144937" y="1503.2608695652175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="soO-NL-3kI">
