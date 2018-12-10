@@ -14,9 +14,9 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet var tableView: UITableView!
    
-
-   var posts = [Post]()
-    var songs = [Song]()
+    var tempPosts = [Post]()
+    // var songs = [Song]()
+    var items = [Item]()
  
     
     override func viewDidLoad() {
@@ -34,16 +34,14 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        viewDidAppear()
-
-    }
-    
-    func viewDidAppear() {
-        observePosts()
-        observeSongs()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.observePosts()
+        self.observeSongs()
     }
     
     func observePosts() {
@@ -51,7 +49,8 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         postRef.observe(.value , with: {snapshot in
             
-            var tempPosts = [Post]()
+            // var tempPosts = [Post]()
+            self.tempPosts = []
             
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
@@ -68,16 +67,21 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
                     let userProfile = UserProfile(uid: uid, username: username, photoURL: url)
                     let post = Post(id: childSnapshot.key, author: userProfile, text: text, timestamp: timestamp, imageURL: imageURL)
                     
-                    tempPosts.append(post)
-    
+                    self.tempPosts.append(post)
                     
                     }
             }
             
-            self.posts = tempPosts
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.items = self.items.filter { item in !(item is Post) }
+               
+                self.items.append(contentsOf: self.tempPosts)
+                self.items.sort()
+                self.tableView.reloadData()
+            }
         })
     }
+    
     
     func observeSongs() {
         let postRef = Database.database().reference().child("songs")
@@ -85,6 +89,7 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         postRef.observe(.value , with: {snapshot in
             
             var tempSongs = [Song]()
+         
             
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
@@ -98,19 +103,29 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
                     let timestamp = dict["timestamp"] as? Double {
                     
                     let userProfile = UserProfile(uid: uid, username: username, photoURL: url)
-                    // let post = Post(id: childSnapshot.key, author: userProfile, text: text, timestamp: timestamp, imageURL: imageURL)
+                    
                     let song = Song(id: childSnapshot.key, author: userProfile, text: text, timestamp: timestamp)
+                    
                     tempSongs.append(song)
             
                 }
             }
             
-            self.songs = tempSongs
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.items = self.items.filter { item in !(item is Song) }
+                
+                self.items.append(contentsOf: tempSongs)
+                self.items.sort()
+                self.tableView.reloadData()
+            }
+            
+            
+            //self.items tempSongs
+            //self.tableView.reloadData()
         })
     }
-    
-     /** func updateProfiles() {
+ /**
+     func updateProfiles() {
         
         let postRef = Database.database().reference().child("posts")
         postRef.observe(.childChanged, with: {snapshot in
@@ -128,34 +143,74 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
         })
-    } **/
-    
+    }
+**/
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count + songs.count
+        return items.count
     }
+    
+    
+   
+
+    /**
+   
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row < posts.count {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        cell.set(post: posts[indexPath.row])
+        
+        return cell
+        
+    }
+    **/
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = items[indexPath.row]
+        
+        if let song = item as? Song {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongTableViewCell
+            cell.set(song: song)
+            return cell
+            
+        } else if let post = item as? Post {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-            cell.set(post: posts[indexPath.row])
-            
+            cell.set(post: post)
             return cell
             
         } else {
             
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: "songCell", for: indexPath) as! SongTableViewCell
-            cell2.set(song: songs[indexPath.row-posts.count])
+            return UITableViewCell()
+        }
+    }
+    /**
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = items[indexPath.row]
+        
+        if let post = item as? Post {
             
-            return cell2
+            let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+            cell.set(post: post)
+            return cell
+            
+        } else {
+            print("no")
         }
         
+        return UITableViewCell()
     }
-    
-
+    **/
 }

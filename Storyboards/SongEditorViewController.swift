@@ -16,7 +16,6 @@ class SongEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
     }
     
     @IBAction func dismissBtn(_ sender: UIButton) {

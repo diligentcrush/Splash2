@@ -371,9 +371,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xW-W1-1sh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xW-W1-1sh">
                                 <rect key="frame" x="0.0" y="586" width="414" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.58431372549019611" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="23"/>
                                 <state key="normal" title="login">
@@ -383,10 +382,12 @@
                                     <segue destination="cjG-g9-PVb" kind="show" id="jk1-ZB-s6G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaY-mf-k91">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaY-mf-k91">
                                 <rect key="frame" x="0.0" y="661" width="414" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GaY-mf-k91" secondAttribute="height" multiplier="138:25" id="uPe-Oy-PXf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="23"/>
                                 <state key="normal" title="sign up">
                                     <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -395,19 +396,37 @@
                                     <segue destination="72z-vv-VbN" kind="show" id="4gj-80-GPi"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="disc wave concept saturated" translatesAutoresizingMaskIntoConstraints="NO" id="GCg-8x-6Fe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disc wave concept saturated" translatesAutoresizingMaskIntoConstraints="NO" id="GCg-8x-6Fe">
                                 <rect key="frame" x="107" y="196" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GCg-8x-6Fe" secondAttribute="height" multiplier="1:1" id="RgH-3I-Afm"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="uwaves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecu-th-p2j">
-                                <rect key="frame" x="155" y="404" width="104" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uwaves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecu-th-p2j">
+                                <rect key="frame" x="155" y="406" width="104" height="36"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="GCg-8x-6Fe" firstAttribute="top" secondItem="V71-Ax-OQE" secondAttribute="top" constant="176" id="2Ro-e4-Otx"/>
+                            <constraint firstItem="7xW-W1-1sh" firstAttribute="trailing" secondItem="V71-Ax-OQE" secondAttribute="trailing" id="2mg-rf-8iH"/>
+                            <constraint firstItem="ecu-th-p2j" firstAttribute="leading" secondItem="V71-Ax-OQE" secondAttribute="leading" constant="155" id="43V-G5-76S"/>
+                            <constraint firstItem="ecu-th-p2j" firstAttribute="top" secondItem="GCg-8x-6Fe" secondAttribute="bottom" constant="10" id="8px-Sl-wke"/>
+                            <constraint firstItem="7xW-W1-1sh" firstAttribute="height" secondItem="GaY-mf-k91" secondAttribute="height" id="FeZ-9E-k8J"/>
+                            <constraint firstItem="GaY-mf-k91" firstAttribute="bottom" secondItem="V71-Ax-OQE" secondAttribute="bottom" id="J0k-cM-6z7"/>
+                            <constraint firstItem="7xW-W1-1sh" firstAttribute="leading" secondItem="V71-Ax-OQE" secondAttribute="leading" id="OtY-HL-5N4"/>
+                            <constraint firstItem="V71-Ax-OQE" firstAttribute="trailing" secondItem="ecu-th-p2j" secondAttribute="trailing" constant="155" id="TIr-1E-7Dm"/>
+                            <constraint firstItem="V71-Ax-OQE" firstAttribute="trailing" secondItem="GCg-8x-6Fe" secondAttribute="trailing" constant="107" id="WLp-s3-dqG"/>
+                            <constraint firstItem="7xW-W1-1sh" firstAttribute="width" secondItem="GaY-mf-k91" secondAttribute="width" id="cIc-ob-WB5"/>
+                            <constraint firstItem="GaY-mf-k91" firstAttribute="top" secondItem="7xW-W1-1sh" secondAttribute="bottom" id="dQ4-ID-vZD"/>
+                            <constraint firstItem="GaY-mf-k91" firstAttribute="trailing" secondItem="V71-Ax-OQE" secondAttribute="trailing" id="gWr-bV-vZC"/>
+                            <constraint firstItem="GaY-mf-k91" firstAttribute="leading" secondItem="V71-Ax-OQE" secondAttribute="leading" id="iBP-DW-mIH"/>
+                            <constraint firstItem="GCg-8x-6Fe" firstAttribute="leading" secondItem="V71-Ax-OQE" secondAttribute="leading" constant="107" id="o01-j9-Not"/>
+                            <constraint firstItem="7xW-W1-1sh" firstAttribute="top" secondItem="ecu-th-p2j" secondAttribute="bottom" constant="144" id="xeA-bp-xSK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V71-Ax-OQE"/>
                     </view>
                     <connections>
@@ -426,35 +445,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="disc wave concept saturated" translatesAutoresizingMaskIntoConstraints="NO" id="yPo-Tp-jVh">
-                                <rect key="frame" x="132" y="59" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disc wave concept saturated" translatesAutoresizingMaskIntoConstraints="NO" id="yPo-Tp-jVh">
+                                <rect key="frame" x="132" y="60" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yPo-Tp-jVh" secondAttribute="height" multiplier="1:1" id="F4f-pF-7s9"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqi-dW-L8e">
-                                <rect key="frame" x="20" y="279" width="91" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqi-dW-L8e">
+                                <rect key="frame" x="20" y="278" width="91" height="26"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-0Q-VSw">
-                                <rect key="frame" x="20" y="313" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-0Q-VSw">
+                                <rect key="frame" x="20" y="314" width="374" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8m-X3-RP4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8m-X3-RP4">
                                 <rect key="frame" x="20" y="381" width="50" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shA-dI-FDJ">
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shA-dI-FDJ">
                                 <rect key="frame" x="20" y="415" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="18"/>
@@ -465,16 +482,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXH-HD-gog">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXH-HD-gog">
                                 <rect key="frame" x="20" y="483" width="89" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-U7-6dl">
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-U7-6dl">
                                 <rect key="frame" x="20" y="517" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="18"/>
@@ -501,9 +516,8 @@
                                     <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODy-F8-BWf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODy-F8-BWf">
                                 <rect key="frame" x="20" y="30" width="45" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="back">
                                     <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -516,9 +530,37 @@
                         </subviews>
                         <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="DSr-5M-44w" firstAttribute="trailing" secondItem="yPo-Tp-jVh" secondAttribute="trailing" constant="132" id="3IZ-In-AgL"/>
+                            <constraint firstItem="5CM-U7-6dl" firstAttribute="top" secondItem="rXH-HD-gog" secondAttribute="bottom" constant="8" id="7W9-ZZ-HpT"/>
+                            <constraint firstItem="ODy-F8-BWf" firstAttribute="top" secondItem="DSr-5M-44w" secondAttribute="top" constant="10" id="8Od-Qx-Qaf"/>
+                            <constraint firstItem="yPo-Tp-jVh" firstAttribute="leading" secondItem="ODy-F8-BWf" secondAttribute="trailing" constant="67" id="ABc-rW-04p"/>
+                            <constraint firstItem="shA-dI-FDJ" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="C5s-kb-Cb6"/>
+                            <constraint firstItem="5CM-U7-6dl" firstAttribute="top" secondItem="rXH-HD-gog" secondAttribute="bottom" constant="8" id="Cup-nR-r7a"/>
+                            <constraint firstItem="shA-dI-FDJ" firstAttribute="top" secondItem="U8m-X3-RP4" secondAttribute="bottom" constant="8" id="F22-Y1-QvY"/>
                             <constraint firstItem="iHX-Dq-cgw" firstAttribute="bottom" secondItem="DSr-5M-44w" secondAttribute="bottom" id="F5b-VU-DWu"/>
+                            <constraint firstItem="rXH-HD-gog" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="F96-t1-PId"/>
+                            <constraint firstItem="cr9-0Q-VSw" firstAttribute="top" secondItem="Nqi-dW-L8e" secondAttribute="bottom" constant="10" id="G2q-gR-Pdj"/>
+                            <constraint firstItem="U8m-X3-RP4" firstAttribute="top" secondItem="cr9-0Q-VSw" secondAttribute="bottom" constant="37" id="HXq-P9-XZ5"/>
+                            <constraint firstItem="yPo-Tp-jVh" firstAttribute="top" secondItem="DSr-5M-44w" secondAttribute="top" constant="40" id="LPf-3X-CdD"/>
+                            <constraint firstItem="yPo-Tp-jVh" firstAttribute="centerX" secondItem="DSr-5M-44w" secondAttribute="centerX" id="OiO-oZ-Tyw"/>
+                            <constraint firstItem="DSr-5M-44w" firstAttribute="trailing" secondItem="5CM-U7-6dl" secondAttribute="trailing" constant="20" id="SxQ-3A-QBj"/>
+                            <constraint firstItem="ODy-F8-BWf" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="VWn-Pu-KAE"/>
                             <constraint firstItem="iHX-Dq-cgw" firstAttribute="trailing" secondItem="DSr-5M-44w" secondAttribute="trailing" id="WiI-az-ZnH"/>
+                            <constraint firstItem="rXH-HD-gog" firstAttribute="top" secondItem="shA-dI-FDJ" secondAttribute="bottom" constant="38" id="XZS-IR-O5N"/>
+                            <constraint firstItem="cr9-0Q-VSw" firstAttribute="top" secondItem="Nqi-dW-L8e" secondAttribute="bottom" constant="10" id="aPw-Ty-UUe"/>
+                            <constraint firstItem="U8m-X3-RP4" firstAttribute="top" secondItem="cr9-0Q-VSw" secondAttribute="bottom" constant="37" id="b5S-OG-L4R"/>
+                            <constraint firstItem="U8m-X3-RP4" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="clM-ew-rOR"/>
+                            <constraint firstItem="Nqi-dW-L8e" firstAttribute="top" secondItem="ODy-F8-BWf" secondAttribute="bottom" constant="210" id="eEe-el-pXS"/>
+                            <constraint firstItem="DSr-5M-44w" firstAttribute="trailing" secondItem="cr9-0Q-VSw" secondAttribute="trailing" constant="20" id="kP8-0O-jew"/>
+                            <constraint firstItem="5CM-U7-6dl" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="m1S-A7-s9H"/>
                             <constraint firstItem="iHX-Dq-cgw" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" id="n76-6E-6Z8"/>
+                            <constraint firstItem="cr9-0Q-VSw" firstAttribute="top" secondItem="yPo-Tp-jVh" secondAttribute="bottom" constant="104" id="nwS-vH-JzU"/>
+                            <constraint firstItem="DSr-5M-44w" firstAttribute="trailing" secondItem="shA-dI-FDJ" secondAttribute="trailing" constant="20" id="qI3-eh-ee3"/>
+                            <constraint firstItem="shA-dI-FDJ" firstAttribute="top" secondItem="U8m-X3-RP4" secondAttribute="bottom" constant="8" id="qx1-gs-Gkq"/>
+                            <constraint firstItem="iHX-Dq-cgw" firstAttribute="top" secondItem="5CM-U7-6dl" secondAttribute="bottom" constant="119" id="r4n-Am-62f"/>
+                            <constraint firstItem="Nqi-dW-L8e" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="sNH-I3-j0R"/>
+                            <constraint firstItem="rXH-HD-gog" firstAttribute="top" secondItem="shA-dI-FDJ" secondAttribute="bottom" constant="38" id="uOj-Dc-aTS"/>
+                            <constraint firstItem="cr9-0Q-VSw" firstAttribute="leading" secondItem="DSr-5M-44w" secondAttribute="leading" constant="20" id="yqL-aU-0sL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DSr-5M-44w"/>
                     </view>
@@ -541,9 +583,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="disc wave concept saturated" translatesAutoresizingMaskIntoConstraints="NO" id="FkW-se-I0G">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="disc wave concept saturated" translatesAutoresizingMaskIntoConstraints="NO" id="FkW-se-I0G">
                                 <rect key="frame" x="132" y="59" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8IR-bd-dQ8">
                                 <rect key="frame" x="20" y="336" width="374" height="1"/>
@@ -596,9 +637,8 @@
                                     <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0x-Oo-PiR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0x-Oo-PiR">
                                 <rect key="frame" x="20" y="30" width="45" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="back">
                                     <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -611,6 +651,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FkW-se-I0G" firstAttribute="leading" secondItem="X0x-Oo-PiR" secondAttribute="trailing" constant="67" id="J4C-uj-HUv"/>
+                            <constraint firstItem="X0x-Oo-PiR" firstAttribute="leading" secondItem="DIy-qS-tGL" secondAttribute="leading" constant="20" id="PKN-87-DXZ"/>
+                            <constraint firstItem="X0x-Oo-PiR" firstAttribute="top" secondItem="DIy-qS-tGL" secondAttribute="top" constant="10" id="SS5-Un-tWZ"/>
                             <constraint firstItem="hgU-hk-bLe" firstAttribute="bottom" secondItem="DIy-qS-tGL" secondAttribute="bottom" id="Ugg-uf-HdF"/>
                             <constraint firstItem="hgU-hk-bLe" firstAttribute="leading" secondItem="DIy-qS-tGL" secondAttribute="leading" id="VXT-XW-jGL"/>
                             <constraint firstItem="hgU-hk-bLe" firstAttribute="trailing" secondItem="DIy-qS-tGL" secondAttribute="trailing" id="zF3-GH-oGQ"/>
@@ -763,6 +806,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8md-yT-hLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-504" y="-42"/>
+        </scene>
+        <!--Other Profile View Controller-->
+        <scene sceneID="cRk-ad-gi2">
+            <objects>
+                <viewController id="7eQ-Vn-QVu" customClass="OtherProfileViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ODT-9U-jgM"/>
+                        <viewControllerLayoutGuide type="bottom" id="CRm-3Y-t8P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iZ5-fx-mbm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Wg-ee-5YC">
+                                <rect key="frame" x="165" y="80" width="84" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Wg-ee-5YC" secondAttribute="height" multiplier="1:1" id="Nl4-sz-5Ss"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdh-Km-kw0">
+                                <rect key="frame" x="166" y="174" width="82" height="23"/>
+                                <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-iI-dNp">
+                                <rect key="frame" x="15" y="237" width="384" height="499"/>
+                                <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e6U-eg-xnk">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="v2c-Ui-pJr" customClass="profileCell" customModule="Splash2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RPW-vt-i70">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="RPW-vt-i70" secondAttribute="bottom" id="4Dq-fb-gKn"/>
+                                            <constraint firstAttribute="width" secondItem="RPW-vt-i70" secondAttribute="height" multiplier="1:1" id="QaS-DH-POE"/>
+                                            <constraint firstItem="RPW-vt-i70" firstAttribute="leading" secondItem="v2c-Ui-pJr" secondAttribute="leading" id="k2d-1E-SJw"/>
+                                            <constraint firstItem="RPW-vt-i70" firstAttribute="top" secondItem="v2c-Ui-pJr" secondAttribute="top" id="qx9-VT-lPV"/>
+                                            <constraint firstAttribute="trailing" secondItem="RPW-vt-i70" secondAttribute="trailing" id="sfr-E8-TEa"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="collectPic" destination="RPW-vt-i70" id="zYa-gt-T59"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqb-ss-h9P">
+                                <rect key="frame" x="20" y="30" width="45" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissBtn:" destination="7eQ-Vn-QVu" eventType="touchUpInside" id="Fd7-Aw-HMm"/>
+                                    <action selector="dismissBtn:" destination="tp2-jD-2ox" eventType="touchUpInside" id="IF0-NP-iNE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kdh-Km-kw0" firstAttribute="centerX" secondItem="iZ5-fx-mbm" secondAttribute="centerX" id="4Eb-vA-bQX"/>
+                            <constraint firstItem="0Wg-ee-5YC" firstAttribute="top" secondItem="ODT-9U-jgM" secondAttribute="bottom" constant="60" id="5jZ-7S-Yg1"/>
+                            <constraint firstItem="CRm-3Y-t8P" firstAttribute="top" secondItem="AhK-iI-dNp" secondAttribute="bottom" id="BTT-Ca-btP"/>
+                            <constraint firstItem="AhK-iI-dNp" firstAttribute="top" secondItem="kdh-Km-kw0" secondAttribute="bottom" constant="40" id="DPm-4n-ywm"/>
+                            <constraint firstItem="AhK-iI-dNp" firstAttribute="leading" secondItem="MBh-Sd-22N" secondAttribute="leading" constant="15" id="Elf-T3-xmX"/>
+                            <constraint firstItem="kdh-Km-kw0" firstAttribute="top" secondItem="0Wg-ee-5YC" secondAttribute="bottom" constant="10" id="S4l-p0-pZr"/>
+                            <constraint firstItem="0Wg-ee-5YC" firstAttribute="leading" secondItem="MBh-Sd-22N" secondAttribute="leading" constant="165" id="XLL-JH-UCv"/>
+                            <constraint firstItem="0Wg-ee-5YC" firstAttribute="centerX" secondItem="iZ5-fx-mbm" secondAttribute="centerX" id="ZHO-fx-8ps"/>
+                            <constraint firstItem="MBh-Sd-22N" firstAttribute="trailing" secondItem="AhK-iI-dNp" secondAttribute="trailing" constant="15" id="wcc-YR-6jF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MBh-Sd-22N"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="AhK-iI-dNp" id="DZ6-EY-jpM"/>
+                        <outlet property="profileImage" destination="0Wg-ee-5YC" id="W4a-n3-R84"/>
+                        <outlet property="usernameLabel" destination="kdh-Km-kw0" id="KT2-Sy-1JP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAO-DU-CB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397" y="1503"/>
         </scene>
     </scenes>
     <resources>

@@ -8,6 +8,50 @@
 
 import Foundation
 
+
+
+class Post:Item {
+
+    var imageURL:String
+
+    init(id: String, author: UserProfile, text: String, timestamp: Double, imageURL:String) {
+        self.imageURL = imageURL
+        super.init(id: id, author: author, text: text, timestamp: timestamp)
+    }
+}
+
+
+/**
+class Post:Item {
+
+    var imageURL: String!
+    
+    override init(id: String, author: UserProfile, text: String, timestamp: Double) {
+        super.init(id: id, author: author, text: text, timestamp: timestamp)
+    }
+    
+    init(id: String, author: UserProfile, text: String, timestamp: Double, imageURL: String) {
+        self.imageURL = imageURL
+        super.init(id: id, author: author, text: text, timestamp: timestamp)
+    }
+}
+**/
+/**
+class Post:Item {
+    
+    var imageURL: String!
+    
+     convenience init(id: String, author: UserProfile, text: String, timestamp: Double, imageURL: String) {
+        
+        self.init(id: id, author: author, text: text, timestamp: timestamp, imageURL: imageURL)
+        
+        self.imageURL = imageURL
+    }
+    
+}
+
+ **/
+/**
 class Post {
     var id:String
     var author:UserProfile
@@ -23,3 +67,4 @@ class Post {
         self.imageURL = imageURL
     }
 }
+**/

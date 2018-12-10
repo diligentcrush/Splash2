@@ -8,17 +8,18 @@
 
 import Foundation
 
-class Song {
-    var id:String
-    var author:UserProfile
-    var text:String
-    var createdAt: Date
+/**
+class Song:Item {
     
-    init(id:String, author:UserProfile, text:String, timestamp: Double) {
-        self.id = id
-        self.author = author
-        self.text = text
-        self.createdAt = Date(timeIntervalSince1970: timestamp / 1000)
-
+    override init(id: String, author: UserProfile, text: String, timestamp: Double) {
+        super.init(id: id, author: author, text: text, timestamp: timestamp)
     }
 }
+**/
+
+class Song:Item {
+    override init(id: String, author: UserProfile, text: String, timestamp: Double) {
+        super.init(id: id, author: author, text: text, timestamp: timestamp)
+    }
+}
+

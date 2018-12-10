@@ -39,5 +39,5 @@ class SongTableViewCell: UITableViewCell {
         self.profileImage.sd_setImage(with: profileLink)
         timestampLabel.text = song.createdAt.calenderTimeSinceNow()
     }
-    
+   
 }

@@ -14,63 +14,57 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var photoCaption: UITextView!
     
-    var imageURL: String?
+    var imageURL: String!
     var currentText: String!
     var pickedImage = UIImage()
     
     @IBAction func postButton(_ sender: UIButton) {
         
         guard let userProfile = UserService.currentUserProfile else { return }
-        
-        // guard let uid = Auth.auth().currentUser?.uid else { return }
-        let postRef = Database.database().reference().child("posts").childByAutoId()
-        
-        let postObject = [
-           "author": [
-                "uid": userProfile.uid,
-                "username": userProfile.username,
-                "photoURL": userProfile.photoURL.absoluteString
-            ], 
-            "text": photoCaption.text,
-            "timestamp": [".sv":"timestamp"],
-            "imageURL": imageURL as! String!
-            ] as [String:Any]
-        
-        postRef.setValue(postObject, withCompletionBlock: { error, ref in
-            if error == nil {
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                print("errrrororor")
-            }
-        })
-        
-        let photoID = UUID().uuidString
-        
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        let photoID = UUID().uuidString
         let storageRef = Storage.storage().reference().child("posts/\(uid)/\(photoID)")
-        
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
         
         guard let imageData = pickedImage.jpegData(compressionQuality: 1) else {return}
         
-        let uploadTask = storageRef.putData(imageData, metadata: metaData) { (metadata, error) in
-            print("UPLOAD TASK FINISHED")
-            print(metadata ?? "NO METADATA")
-            print(error ?? "NO ERROR")
-            
-            storageRef.downloadURL(completion: {(url, error) in
-                if error != nil {
-                    print("error with database reference")
-                } else {
-                    self.imageURL = url?.absoluteString
-                    
-                }
-            })
+        let uploadTask = storageRef.putData(imageData, metadata: metaData) {(metadata, error) in
+            if error == nil {
+                storageRef.downloadURL(completion: {(url, error) in
+                    if error != nil {
+                        print("error with database reference")
+                    } else {
+                        self.imageURL = url?.absoluteString
+                        
+                        let postObject = [
+                            "author": [
+                                "uid": userProfile.uid,
+                                "username": userProfile.username,
+                                "photoURL": userProfile.photoURL.absoluteString
+                            ],
+                            "text": self.photoCaption.text,
+                            "imageURL": self.imageURL as! String!,
+                            "timestamp": [".sv":"timestamp"],
+                            ] as [String:Any]
+                        
+                        postRef.setValue(postObject, withCompletionBlock: { error, ref in
+                            if error == nil {
+                                self.dismiss(animated: true, completion: nil)
+                            } else {
+                                print("error uploading")
+                            }
+                        })
+                        
+                    }
+                })
+            } else {
+                print("total fuken error")
+            }
         }
         
         uploadTask.resume()
-        
         
     }
     
@@ -96,7 +90,6 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
 
     }
     
@@ -163,9 +156,6 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
             
         
     }
-    
-   
-    
 
 }
 }
