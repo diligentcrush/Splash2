@@ -8,15 +8,6 @@
 
 import Foundation
 
-/**
-class Song:Item {
-    
-    override init(id: String, author: UserProfile, text: String, timestamp: Double) {
-        super.init(id: id, author: author, text: text, timestamp: timestamp)
-    }
-}
-**/
-
 class Song:Item {
     override init(id: String, author: UserProfile, text: String, timestamp: Double) {
         super.init(id: id, author: author, text: text, timestamp: timestamp)

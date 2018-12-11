@@ -15,22 +15,17 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var tableView: UITableView!
    
     var tempPosts = [Post]()
-    // var songs = [Song]()
     var items = [Item]()
  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // tableView = UITableView(frame: view.bounds, style: .plain)
-        
        let cellNib = UINib(nibName: "PostTableViewCell", bundle: nil)
        tableView.register(cellNib, forCellReuseIdentifier: "postCell")
         
         let songNib = UINib(nibName: "SongTableViewCell", bundle: nil)
         tableView.register(songNib, forCellReuseIdentifier: "songCell")
-        
-        // view.addSubview(tableView)
         
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
@@ -49,7 +44,6 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         postRef.observe(.value , with: {snapshot in
             
-            // var tempPosts = [Post]()
             self.tempPosts = []
             
             for child in snapshot.children {
@@ -119,32 +113,9 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.tableView.reloadData()
             }
             
-            
-            //self.items tempSongs
-            //self.tableView.reloadData()
         })
     }
- /**
-     func updateProfiles() {
-        
-        let postRef = Database.database().reference().child("posts")
-        postRef.observe(.childChanged, with: {snapshot in
-            
-            for child in snapshot.children {
-                if let childSnapshot = child as? DataSnapshot,
-                let dict = childSnapshot.value as? [String:Any],
-                let author = dict["author"] as? [String:Any],
-                    let photoURL = author["photoURL"] as? String,
-                    let uid = author["uid"] as? String,
-                    let url = URL(string: photoURL),
-                    let username = author["username"] as? String {
-                   
-                    let userProfile = UserProfile(uid: uid, username: username, photoURL: url)
-                }
-            }
-        })
-    }
-**/
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -153,27 +124,6 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
         return items.count
     }
     
-    
-   
-
-    /**
-   
-    func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
-    }
-    
-    
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-        cell.set(post: posts[indexPath.row])
-        
-        return cell
-        
-    }
-    **/
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let item = items[indexPath.row]
@@ -195,22 +145,5 @@ class Home2ViewController: UIViewController, UITableViewDataSource, UITableViewD
             return UITableViewCell()
         }
     }
-    /**
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let item = items[indexPath.row]
-        
-        if let post = item as? Post {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-            cell.set(post: post)
-            return cell
-            
-        } else {
-            print("no")
-        }
-        
-        return UITableViewCell()
-    }
-    **/
+ 
 }
