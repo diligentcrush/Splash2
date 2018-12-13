@@ -50,6 +50,7 @@ class PostTableViewCell: UITableViewCell {
         self.profileLink = post.author.photoURL
         self.profileImage.sd_setImage(with: profileLink)
         timestampLabel.text = post.createdAt.calenderTimeSinceNow()
+        
     }
     
 }

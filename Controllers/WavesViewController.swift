@@ -9,13 +9,15 @@
 import UIKit
 import Firebase
 
-class WavesViewController: UIViewController {
+class WavesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var createMenu: UIView!
     @IBOutlet weak var groupPic: UIImageView!
     @IBOutlet weak var waveName: UITextField!
     @IBOutlet weak var currentWave: UILabel!
     var groupNames = [String]()
+    var groupPicURL: String!
+    var pickedImage = UIImage()
     
     
     override func viewDidLoad() {
@@ -28,6 +30,10 @@ class WavesViewController: UIViewController {
         let keyboardTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(keyboardTap)
         view.isUserInteractionEnabled = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPhoto))
+        groupPic.addGestureRecognizer(tapGesture)
+        groupPic.isUserInteractionEnabled = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
@@ -78,6 +84,26 @@ class WavesViewController: UIViewController {
         
     }
     
+    @objc func handleSelectPhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+        }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        imagePicker.modalPresentationStyle = .overFullScreen
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        self.dismiss(animated: true, completion: nil)
+        self.createMenu.alpha = 1
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.groupPic.image = image
+            self.pickedImage = image
+        }
+    }
     
     @IBAction func createWave(_ sender: UIButton) {
         if waveName.text == "" {
@@ -99,48 +125,65 @@ class WavesViewController: UIViewController {
                     
                 } else {
                     
-                    self.createMenu.alpha = 0
-                    self.waveName.resignFirstResponder()
-                    UIView.animate(withDuration: 0.3) {
-                        self.view.frame.origin.y = 0
-                    }
-                    
                     let confirm = UIAlertController(title: "Wave created", message: nil, preferredStyle: .alert)
                     confirm.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.present(confirm,animated: true, completion: nil)
+                    self.present(confirm,animated: true, completion: { self.createMenu.alpha = 0
+                        self.waveName.resignFirstResponder()
+                        UIView.animate(withDuration: 0.3) {
+                            self.view.frame.origin.y = 0
+                        }})
                     
-                    let postRef = Database.database().reference().child("posts/\(self.waveName.text!)")
-                    let songRef = Database.database().reference().child("songs/\(self.waveName.text!)")
-                    let waveObject = [
-                        "wave-name": self.waveName.text!,
-                        ] as [String:Any]
+                    guard let uid = Auth.auth().currentUser?.uid else { return }
+                    let photoID = UUID().uuidString
+                    let storageRef = Storage.storage().reference().child("posts/\(uid)/\(self.waveName.text!)\(photoID)")
+                    let metaData = StorageMetadata()
+                    metaData.contentType = "image/jpg"
                     
-                    postRef.setValue(waveObject, withCompletionBlock: {error, ref in
+                    guard let imageData = self.pickedImage.jpegData(compressionQuality: 1) else {return}
+                    
+                    let uploadTask = storageRef.putData(imageData, metadata: metaData) {(metadata, error) in
                         if error == nil {
-                            
-                        } else {
-                            print("error with posting")
+                            storageRef.downloadURL(completion: {(url, error) in
+                                if error != nil {
+                                    print("error with download url")
+                                } else {
+                                    self.groupPicURL = url?.absoluteString
+                                    self.uploadWaveData()
+                                }
+                            })
                         }
-                    })
-                    
-                    songRef.setValue(waveObject, withCompletionBlock: {error, ref in
-                        if error == nil {
-                            
-                        } else {
-                            print("error with posting")
-                        }
-                    })
-                    
+                    }
+                    uploadTask.resume()
                     //self.dismiss(animated: true, completion: nil)
                 }
-                
             })
-            
         }
+    }
+    
+    func uploadWaveData() {
+        let postRef = Database.database().reference().child("posts/\(self.waveName.text!)")
+        let songRef = Database.database().reference().child("songs/\(self.waveName.text!)")
+        let waveObject = [
+            "waveName": self.waveName.text!,
+            "groupPic": self.groupPicURL!
+            ] as [String:Any]
         
+        postRef.setValue(waveObject, withCompletionBlock: {error, ref in
+            if error == nil {
+                print("this is the pic: \(self.groupPicURL!)")
+                
+            } else {
+                print("error with posting")
+            }
+        })
         
-        
-        
+        songRef.setValue(waveObject, withCompletionBlock: {error, ref in
+            if error == nil {
+                
+            } else {
+                print("error with posting")
+            }
+        })
     }
     
     

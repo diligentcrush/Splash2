@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GT-Haptik-Medium.otf">
+            <string>GTHaptikMedium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="myWaveCell" rowHeight="123" id="w1c-q4-Wvd" customClass="MyWavesTableViewCell" customModule="Splash2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w1c-q4-Wvd" id="CWX-5w-Ezx">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45U-Hs-UJK">
+                        <rect key="frame" x="186.5" y="19.5" width="41" height="36"/>
+                        <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="19"/>
+                        <state key="normal" title="label">
+                            <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="waveName:" destination="w1c-q4-Wvd" eventType="touchUpInside" id="ZfR-WA-Qcy"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="45U-Hs-UJK" firstAttribute="centerY" secondItem="CWX-5w-Ezx" secondAttribute="centerY" id="SXV-md-WsV"/>
+                    <constraint firstItem="45U-Hs-UJK" firstAttribute="centerX" secondItem="CWX-5w-Ezx" secondAttribute="centerX" id="xqP-zy-dUF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="waveName" destination="45U-Hs-UJK" id="4yX-xu-U1t"/>
+            </connections>
+            <point key="canvasLocation" x="16" y="222.63868065967017"/>
+        </tableViewCell>
+    </objects>
+</document>

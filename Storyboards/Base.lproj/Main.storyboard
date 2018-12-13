@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYA-d4-6nU">
-                                        <rect key="frame" x="188.33333333333334" y="36" width="37.333333333333343" height="24"/>
+                                        <rect key="frame" x="187.33333333333334" y="34.666666666666664" width="39.333333333333343" height="25.333333333333336"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IYA-d4-6nU" secondAttribute="height" multiplier="17:11" id="4dc-LB-hC1"/>
                                         </constraints>
@@ -275,32 +275,19 @@
                         <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="372.60000000000002"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="lTx-Pc-GmN" kind="relationship" relationship="rootViewController" id="9EC-gw-DYA"/>
+                        <segue destination="npE-nL-RWo" kind="relationship" relationship="rootViewController" id="lGW-jH-pPm"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkC-B7-Ede" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2084" y="-1"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="TQn-71-KiJ">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sM4-bB-glh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="lTx-Pc-GmN" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zdu-yI-UiA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <outlet property="dataSource" destination="lTx-Pc-GmN" id="86h-Mh-8NH"/>
-                            <outlet property="delegate" destination="lTx-Pc-GmN" id="LHp-TR-tVg"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="0VA-L2-e9H"/>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="2794" y="-5"/>
+            <point key="canvasLocation" x="2200" y="-2"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="VDl-Gb-tME">
@@ -324,7 +311,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpQ-3n-Ehq">
-                                        <rect key="frame" x="179.33333333333334" y="36.666666666666664" width="55.333333333333343" height="23.333333333333336"/>
+                                        <rect key="frame" x="177" y="34.333333333333336" width="60.333333333333343" height="25.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UpQ-3n-Ehq" secondAttribute="height" multiplier="26:11" id="RBj-Fn-JwI"/>
                                         </constraints>
@@ -354,13 +341,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlu-4Q-mZi">
-                                <rect key="frame" x="167" y="174" width="80" height="21"/>
+                                <rect key="frame" x="166" y="174" width="82" height="22.666666666666657"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uii-6o-oaJ">
-                                <rect key="frame" x="15" y="235" width="384" height="501"/>
+                                <rect key="frame" x="15" y="236.66666666666666" width="384" height="499.33333333333337"/>
                                 <color key="backgroundColor" red="0.035294117647058823" green="0.035294117647058823" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xd7-Qu-7aW">
                                     <size key="itemSize" width="128" height="128"/>
@@ -448,7 +435,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yG-k1-9BM">
-                                <rect key="frame" x="176" y="680" width="62" height="36"/>
+                                <rect key="frame" x="174" y="678" width="66" height="38"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="log out">
                                     <color key="titleColor" red="0.93333333330000001" green="0.090196078430000007" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,7 +445,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcR-uq-Qno">
-                                <rect key="frame" x="156.66666666666666" y="350" width="100.99999999999997" height="36"/>
+                                <rect key="frame" x="154.66666666666666" y="349" width="104.99999999999997" height="38"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="add friends">
                                     <color key="titleColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -571,25 +558,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqi-dW-L8e">
-                                <rect key="frame" x="20.000000000000007" y="280.66666666666669" width="88.666666666666686" height="23.333333333333314"/>
+                                <rect key="frame" x="20" y="278.66666666666669" width="91" height="25.333333333333314"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-0Q-VSw">
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-0Q-VSw">
                                 <rect key="frame" x="20" y="314" width="374" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8m-X3-RP4">
-                                <rect key="frame" x="19.999999999999996" y="381" width="47.666666666666657" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8m-X3-RP4">
+                                <rect key="frame" x="19.999999999999996" y="381" width="49.666666666666657" height="26"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shA-dI-FDJ">
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shA-dI-FDJ">
                                 <rect key="frame" x="20" y="415" width="374" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -601,13 +588,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXH-HD-gog">
-                                <rect key="frame" x="20" y="483" width="87.666666666666671" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXH-HD-gog">
+                                <rect key="frame" x="20" y="483" width="89" height="26"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-U7-6dl">
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5CM-U7-6dl">
                                 <rect key="frame" x="20" y="517" width="374" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -636,7 +623,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODy-F8-BWf">
-                                <rect key="frame" x="20" y="29.999999999999996" width="45" height="40.666666666666657"/>
+                                <rect key="frame" x="20" y="29.999999999999996" width="45" height="38.666666666666657"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="back">
                                     <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -757,7 +744,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0x-Oo-PiR">
-                                <rect key="frame" x="20" y="30" width="44" height="36"/>
+                                <rect key="frame" x="20" y="30" width="45" height="38"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="back">
                                     <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -867,7 +854,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xor-hW-5EF">
-                                <rect key="frame" x="20" y="31" width="59" height="36"/>
+                                <rect key="frame" x="20" y="31" width="59" height="38"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="cancel">
                                     <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -877,7 +864,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZy-VV-T1f">
-                                <rect key="frame" x="354" y="31" width="40" height="36"/>
+                                <rect key="frame" x="352" y="31" width="42" height="38"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
                                 <state key="normal" title="post">
@@ -888,14 +875,14 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="~" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xMi-ks-k1o">
-                                <rect key="frame" x="20" y="479" width="374" height="52"/>
+                                <rect key="frame" x="20" y="481" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.42686170210000002" green="0.4189733403" blue="0.42246591919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invert_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-fQ-Ql5">
-                                <rect key="frame" x="15" y="72" width="384" height="384"/>
+                                <rect key="frame" x="15" y="74" width="384" height="384"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4rs-fQ-Ql5" secondAttribute="height" multiplier="1:1" id="f9p-dB-mRn"/>
                                 </constraints>
@@ -945,13 +932,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdh-Km-kw0">
-                                <rect key="frame" x="167" y="174" width="80" height="21"/>
+                                <rect key="frame" x="166" y="174" width="82" height="22.666666666666657"/>
                                 <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="18"/>
                                 <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-iI-dNp">
-                                <rect key="frame" x="15" y="235" width="384" height="501"/>
+                                <rect key="frame" x="15" y="236.66666666666666" width="384" height="499.33333333333337"/>
                                 <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e6U-eg-xnk">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1021,6 +1008,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAO-DU-CB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1397" y="1503"/>
+        </scene>
+        <!--my waves-->
+        <scene sceneID="c7p-ZI-lpx">
+            <objects>
+                <viewController id="npE-nL-RWo" customClass="MyWavesViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N59-CO-AKO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lyT-CS-3Pg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lyT-CS-3Pg" firstAttribute="trailing" secondItem="EXN-F8-9hz" secondAttribute="trailing" id="Hzl-eF-gca"/>
+                            <constraint firstItem="lyT-CS-3Pg" firstAttribute="top" secondItem="EXN-F8-9hz" secondAttribute="top" id="Kzs-50-LQ1"/>
+                            <constraint firstItem="lyT-CS-3Pg" firstAttribute="leading" secondItem="EXN-F8-9hz" secondAttribute="leading" id="ROD-Zg-CoT"/>
+                            <constraint firstItem="lyT-CS-3Pg" firstAttribute="bottom" secondItem="EXN-F8-9hz" secondAttribute="bottom" id="fAJ-QK-X6o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EXN-F8-9hz"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="my waves" id="ncV-dv-yxR"/>
+                    <connections>
+                        <outlet property="tableView" destination="lyT-CS-3Pg" id="BW2-yD-hgk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnu-5D-lMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889.8550724637685" y="-2.4456521739130435"/>
         </scene>
     </scenes>
     <resources>
