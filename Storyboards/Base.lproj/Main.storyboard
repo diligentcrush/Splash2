@@ -278,7 +278,7 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
-                            <real key="value" value="372.60000000000002"/>
+                            <real key="value" value="207"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -311,7 +311,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpQ-3n-Ehq">
-                                        <rect key="frame" x="177" y="34.333333333333336" width="60.333333333333343" height="25.666666666666664"/>
+                                        <rect key="frame" x="176.66666666666666" y="34.333333333333336" width="60.666666666666657" height="25.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UpQ-3n-Ehq" secondAttribute="height" multiplier="26:11" id="RBj-Fn-JwI"/>
                                         </constraints>
@@ -1007,7 +1007,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAO-DU-CB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="1503"/>
+            <point key="canvasLocation" x="790" y="1560"/>
         </scene>
         <!--my waves-->
         <scene sceneID="c7p-ZI-lpx">
@@ -1034,11 +1034,94 @@
                     <navigationItem key="navigationItem" title="my waves" id="ncV-dv-yxR"/>
                     <connections>
                         <outlet property="tableView" destination="lyT-CS-3Pg" id="BW2-yD-hgk"/>
+                        <segue destination="SOv-rJ-aab" kind="presentation" identifier="openWave" modalTransitionStyle="crossDissolve" id="Kfh-g9-d3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnu-5D-lMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2889.8550724637685" y="-2.4456521739130435"/>
+        </scene>
+        <!--Go To Wave View Controller-->
+        <scene sceneID="Zd1-FL-fnx">
+            <objects>
+                <viewController storyboardIdentifier="goToWave" id="SOv-rJ-aab" customClass="GoToWaveViewController" customModule="Splash2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WPe-sI-OSR"/>
+                        <viewControllerLayoutGuide type="bottom" id="d9s-Uc-l6n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OPQ-Xw-7oj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DY7-OH-BW5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wavename" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVA-nU-wsg">
+                                        <rect key="frame" x="157" y="34.666666666666664" width="100.33333333333331" height="25.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16g-xZ-xfC">
+                                        <rect key="frame" x="20" y="28.333333333333329" width="30" height="38"/>
+                                        <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="20"/>
+                                        <state key="normal" title="me">
+                                            <color key="titleColor" red="0.0" green="0.64313725490196072" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelEdit:" destination="gQl-3l-qeZ" eventType="touchUpInside" id="iGg-kC-7IM"/>
+                                            <action selector="meBtn:" destination="SOv-rJ-aab" eventType="touchUpInside" id="67P-8f-SdA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSr-zR-W9z">
+                                        <rect key="frame" x="339" y="29.333333333333329" width="55" height="36"/>
+                                        <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="19"/>
+                                        <state key="normal" title="follow">
+                                            <color key="titleColor" red="0.0" green="0.64313725490196072" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="followBtn:" destination="SOv-rJ-aab" eventType="touchUpInside" id="hk2-TX-whh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="16g-xZ-xfC" firstAttribute="leading" secondItem="DY7-OH-BW5" secondAttribute="leading" constant="20" id="Ce0-4a-qE3"/>
+                                    <constraint firstItem="16g-xZ-xfC" firstAttribute="centerY" secondItem="tVA-nU-wsg" secondAttribute="centerY" id="I1d-lT-bxM"/>
+                                    <constraint firstItem="tVA-nU-wsg" firstAttribute="centerX" secondItem="DY7-OH-BW5" secondAttribute="centerX" id="PdC-Jn-WVJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="tVA-nU-wsg" secondAttribute="bottom" constant="10" id="Y0A-kX-hHR"/>
+                                    <constraint firstAttribute="trailing" secondItem="pSr-zR-W9z" secondAttribute="trailing" constant="20" id="Zku-OT-fHM"/>
+                                    <constraint firstItem="pSr-zR-W9z" firstAttribute="centerY" secondItem="tVA-nU-wsg" secondAttribute="centerY" id="jBa-MG-i0f"/>
+                                    <constraint firstAttribute="width" secondItem="DY7-OH-BW5" secondAttribute="height" multiplier="207:35" id="y5b-us-OTn"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sZD-ZR-96B">
+                                <rect key="frame" x="0.0" y="70" width="414" height="666"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117649999998" green="0.035294117649999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DY7-OH-BW5" firstAttribute="trailing" secondItem="ahM-5X-btc" secondAttribute="trailing" id="6df-e6-fRV"/>
+                            <constraint firstItem="sZD-ZR-96B" firstAttribute="trailing" secondItem="ahM-5X-btc" secondAttribute="trailing" id="8w9-aA-91C"/>
+                            <constraint firstItem="sZD-ZR-96B" firstAttribute="leading" secondItem="ahM-5X-btc" secondAttribute="leading" id="9kh-EM-VAD"/>
+                            <constraint firstItem="DY7-OH-BW5" firstAttribute="top" secondItem="OPQ-Xw-7oj" secondAttribute="top" id="NWi-A8-Trp"/>
+                            <constraint firstItem="sZD-ZR-96B" firstAttribute="top" secondItem="DY7-OH-BW5" secondAttribute="bottom" id="aes-eD-Vr6"/>
+                            <constraint firstItem="DY7-OH-BW5" firstAttribute="leading" secondItem="ahM-5X-btc" secondAttribute="leading" id="huA-F9-DzW"/>
+                            <constraint firstItem="d9s-Uc-l6n" firstAttribute="top" secondItem="sZD-ZR-96B" secondAttribute="bottom" id="o73-lB-K5t"/>
+                            <constraint firstItem="sZD-ZR-96B" firstAttribute="top" secondItem="DY7-OH-BW5" secondAttribute="bottom" id="wjB-mu-onV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ahM-5X-btc"/>
+                    </view>
+                    <connections>
+                        <outlet property="followStatus" destination="pSr-zR-W9z" id="dmd-t7-Prb"/>
+                        <outlet property="tableView" destination="sZD-ZR-96B" id="nIq-tT-qia"/>
+                        <outlet property="waveName" destination="tVA-nU-wsg" id="teZ-Jc-ITY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icT-46-bWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3634.7826086956525" y="-2.4456521739130435"/>
         </scene>
     </scenes>
     <resources>

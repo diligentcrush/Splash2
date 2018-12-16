@@ -81,6 +81,8 @@ class WavesViewController: UIViewController, UIImagePickerControllerDelegate, UI
         UIView.animate(withDuration: 0.3) {
             self.view.frame.origin.y = 0
         }
+        self.groupPic.image = #imageLiteral(resourceName: "default-placeholder")
+        self.waveName.text = ""
         
     }
     
@@ -135,7 +137,7 @@ class WavesViewController: UIViewController, UIImagePickerControllerDelegate, UI
                     
                     guard let uid = Auth.auth().currentUser?.uid else { return }
                     let photoID = UUID().uuidString
-                    let storageRef = Storage.storage().reference().child("posts/\(uid)/\(self.waveName.text!)\(photoID)")
+                    let storageRef = Storage.storage().reference().child("waves/\(self.waveName.text!)/wavePic")
                     let metaData = StorageMetadata()
                     metaData.contentType = "image/jpg"
                     
@@ -165,7 +167,7 @@ class WavesViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let songRef = Database.database().reference().child("songs/\(self.waveName.text!)")
         let waveObject = [
             "waveName": self.waveName.text!,
-            "groupPic": self.groupPicURL!
+            "wavePic": self.groupPicURL!
             ] as [String:Any]
         
         postRef.setValue(waveObject, withCompletionBlock: {error, ref in
